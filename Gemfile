@@ -68,3 +68,4 @@ gem "haml-rails"
 gem 'pry-rails'
 gem 'jquery-rails'
 gem 'payjp'
+gem 'therubyracer'
