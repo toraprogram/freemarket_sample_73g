@@ -8,12 +8,10 @@
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |birthday|date|-|
-|address_id|references|null: false, foreign_key: true|
 |nickname|string|null: false|
 |icon_image|string||
 |email|string|false, unique: true|
 |password|string|null: false|
-|card_id|integer|null: false, foreign_key: true|
 |profile|text||
 |phone_authy|string|null: false, unique: true, limit: 11|
 ### Association
@@ -65,40 +63,41 @@
 |seller_id|referencesforeign_key: true|
 |size|string|null: false|
 |shipping_method|string|null: false|
+|image_id|references|foreign_key: true|
 ### Association
 - has_many: images
 - has_many: comment
 - has_many: likes, dependent: :destroy
 - belongs_to :buyer, class_name: "User"
 - belongs_to :seller, class_name: "User"
+- belongs_to :category
+- belongs_to :brand
+
 
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|strig|null: false|
-|item_id|references|foreign_key: true|
 ### Association
-belongs_to :item
+- belongs_to :item
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|strig|null: false|
-|item_id|references|foreign_key: true|
 ### Association
-belongs_to :item
-has_many: category_brands
-has_many: brands, through: category_brands
+- has_many: items
+- has_many: category_brands
+- has_many: brands, through: category_brands
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|strig|null: false|
-|item_id|references|foreign_key: true|
 ### Association
-belongs_to :item
-has_many: category_brands
-has_many: categories, through: category_brands
+- has_many: items
+- has_many: category_brands
+- has_many: categories, through: category_brands
 
 ## category_brandsテーブル
 |Column|Type|Options|
