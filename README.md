@@ -61,12 +61,12 @@
 |region|string|null: false|
 |delivery_day|string|null: false|
 |size|string|null: false|
-|state|boolean|null: false|
+|state|boolean|default: false,null: false|
 |seller_id|referencesforeign_key: true|
 |size|string|null: false|
 |shipping_method|string|null: false|
 ### Association
-- has_many: imames
+- has_many: images
 - has_many: comment
 - has_many: likes, dependent: :destroy
 - belongs_to :buyer, class_name: "User"
