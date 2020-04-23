@@ -21,6 +21,7 @@
 - has_many :likes
 - has_many :items, foreign_key: "saler_id", class_name: "Item"
 - has_many :items, foreign_key: "buyer_id", class_name: "Item"
+- has_many: orders
 
 ## addressesテーブル
 |Column|Type|Options|
@@ -125,4 +126,12 @@ belongs_to :user
 |user_id|references|null: false, foreign_key: true|
 ### Association
 belongs_to :item
+belongs_to :user
+
+## ordersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+### Association
 belongs_to :user
