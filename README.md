@@ -66,6 +66,7 @@
 ### Association
 - has_many: comment
 - has_many: likes, dependent: :destroy
+- has_many: images, dependent: :destroy
 - belongs_to :buyer, class_name: "User"
 - belongs_to :seller, class_name: "User"
 - belongs_to :category
@@ -96,7 +97,7 @@
 ### Association
 - has_many: items
 - has_many: category_brands
-- has_many: categories, through: category_brands
+- has_many: categories, through: :category_brands
 
 ## category_brandsテーブル
 |Column|Type|Options|
