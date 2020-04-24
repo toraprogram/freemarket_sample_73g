@@ -47,6 +47,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'capistrano-rails-console'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -78,7 +79,6 @@ gem 'devise'
 gem 'fog-aws'
 gem 'font-awesome-sass'
 gem "haml-rails"
-gem 'pry-rails'
 gem 'jquery-rails'
 gem 'payjp'
 
