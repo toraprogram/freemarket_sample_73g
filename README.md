@@ -64,9 +64,7 @@
 |seller_id|referencesforeign_key: true|
 |size|string|null: false|
 |shipping_method|string|null: false|
-|image_id|references|foreign_key: true|
 ### Association
-- has_many: images
 - has_many: comment
 - has_many: likes, dependent: :destroy
 - belongs_to :buyer, class_name: "User"
@@ -79,6 +77,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|strig|null: false|
+|item_id|references|foreign_key: true|
 ### Association
 - belongs_to :item
 
