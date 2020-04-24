@@ -61,8 +61,7 @@
 |delivery_day|string|null: false|
 |size|string|null: false|
 |state|boolean|default: false,null: false|
-|seller_id|referencesforeign_key: true|
-|size|string|null: false|
+|buyer_id|referencesforeign_key: true|
 |shipping_method|string|null: false|
 ### Association
 - has_many: comment

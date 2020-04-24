@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_024814) do
+ActiveRecord::Schema.define(version: 2020_04_24_025225) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -55,6 +55,29 @@ ActiveRecord::Schema.define(version: 2020_04_24_024814) do
     t.index ["category_id"], name: "index_category_brands_on_category_id"
   end
 
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "seller_id", null: false
+    t.string "name", null: false
+    t.bigint "category_id"
+    t.bigint "brand_id"
+    t.integer "price", null: false
+    t.text "description", null: false
+    t.string "condition", null: false
+    t.string "delivery_charge", null: false
+    t.string "delivery_method", null: false
+    t.string "region", null: false
+    t.string "delivery_day", null: false
+    t.string "size", null: false
+    t.boolean "state", default: false, null: false
+    t.integer "buyer_id", null: false
+    t.string "shipping_method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["name"], name: "index_items_on_name"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -80,4 +103,6 @@ ActiveRecord::Schema.define(version: 2020_04_24_024814) do
   add_foreign_key "cards", "users"
   add_foreign_key "category_brands", "brands"
   add_foreign_key "category_brands", "categories"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
 end
