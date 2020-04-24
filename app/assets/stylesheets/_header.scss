@@ -24,14 +24,13 @@
           input {
           width: 820px;
           height: 36px;
-         
           }
           &__search {
             height: 38px;
             width: 30px;
             img {
             max-width: 35px;
-            background-color: #3CCACE;
+            background-color: $maincolor;
             border: 0;
             cursor: pointer;
             padding: 8px;
@@ -68,3 +67,5 @@
     }
   }
 }
+
+
