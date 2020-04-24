@@ -28,7 +28,7 @@
 |------|----|-------|
 ||user_id|references|null: false, foreign_key: true|
 |postal_code|string|null: false|
-|prefecture|integer|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |block|string|-|
 |building|string|-|
@@ -36,7 +36,7 @@
 ## Association
 - belongs_to :user
 
-## cardテーブル(gem 'payjp'を使用)
+## cardsテーブル(gem 'payjp'を使用)
 |Column|Type|Options|
 |------|----|-------|
 ||user_id|references|null: false, foreign_key: true|
