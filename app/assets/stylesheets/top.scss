@@ -1,13 +1,489 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
 
-// カラー
+$maincolor: #3CCACE;
 $font_color: #333333;
 $background_color: #f5f5f5;
 $base_color: #ffffff;
-$maincolor: #3CCACE;
 
-* {
-  box-sizing: border-box;
+.main{
+  &__section {
+    padding: 0 60px;
+    height: 560px;
+    background-image: url(pict/bg-mainVisual-pict_pc.jpg);
+    background-size: cover;
+    background-position: center;
+    &__center {
+      padding-top: 180px;
+      &__h1 {
+        color: #fff;
+        font-size: 60px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        margin-bottom: 10px;
+      }
+      &__p1 {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        margin-bottom: 10px;
+      }
+      &__p2 {
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        margin-bottom: 30px;
+      }
+      &__box {
+        display: flex;
+        &__logo {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/bn_app_store.png);
+          margin-right: 10px;
+        }
+        &__logo1 {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/google_play@2x.png);
+        }
+      }
+    }
   }
+  &__section1 {
+    padding: 60px 20px;
+    &__middle {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &__line {
+      height: 4px;
+      background: $maincolor;
+      width: 70px;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    &__box {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 0 150px;
+      &__main1 {
+        &__text1 {
+          background-image: url(pict/pict-reason-01.jpg);
+          height: 300px;
+          width: 300px;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 20px;
+          &__num {
+            background: $maincolor;
+            height: 55px;
+            width: 55px;
+            text-align: center;
+            line-height: 55px;
+            font-size: 30px;
+            color: #fff;
+          }
+        }
+        &__under {
+          color: $maincolor;
+          font-size: 24px;
+          padding-left: 50px;
+        }
+        &__bottom {
+          font-size: 24px;
+        }
+        &__letter1 {
+          padding-top: 20px;
+          height: 50px;
+          width: 300px;
+          font-size: 18px;
+        }
+      }
+      &__main2 {
+        width:300px;
+        height: 400px;
+        background: skyblue;
+        &__text2 {
+          background-image: url(pict/pict-reason-02.jpg);
+          height: 300px;
+          width: 300px;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 20px;
+          &__num {
+            height: 55px;
+            width: 55px;
+            background: $maincolor;
+            text-align: center;
+            line-height: 55px;
+            font-size: 30px;
+            color: #fff;
+          }
+        }
+        &__under {
+          color: $maincolor;
+          font-size: 24px;
+          padding-left: 30px;
+        }
+        &__bottom {
+          font-size: 24px;
+        }
+        &__letter2 {
+          height: 50px;
+          width: 300px;
+          font-size: 18px;
+          padding-top: 20px;
+        }
+      } 
+      &__main3 {  
+        width:300px;
+        height: 400px;  
+        background: skyblue;
+        &__text3 {
+          background-image: url(pict/pict-reason-03.jpg);
+          height: 300px;
+          width: 300px;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 20px;
+          &__num {
+            height: 55px;
+            width: 55px;
+            background: $maincolor;
+            text-align: center;
+            line-height: 55px;
+            font-size: 30px;
+            color: #fff;
+          }
+        }
+        &__under {
+          font-size: 24px;
+          padding-left: 70px;
+        }
+        &__bottom {
+          color: $maincolor;
+          font-size: 24px;
+        }
+        &__letter3 {
+          height: 50px;
+          width: 300px;
+          font-size: 18px;
+          text-align: center;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  &__section2 {
+    height: 400px;
+    background: pink;
+    background-image: url(pict/bg-topMiddleDl-pict.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 160px;
+    &__center {
+      &__h1 {
+        color: #fff;
+        font-size: 27px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      &__p1 {
+        font-size: 18px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      }
+      &__box {
+        display: flex;
+        padding-top: 30px;
+
+        &__logo {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/bn_app_store.png);
+          margin-right: 10px;
+        }
+        &__logo1 {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/google_play@2x.png);
+        }
+      }
+    }
+  }
+  &__section3 {
+    height: 740px;
+    width: 1440px;
+    padding: 60px 100px;
+    &__middle {
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+    }
+    &__line {
+      height: 4px;
+      background: $maincolor;
+      width: 70px;
+      margin: auto;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+    &__box {
+      display: flex;
+      justify-content: space-evenly;
+      &__main1 {
+        padding-left: 100px;
+        &__text1 {
+          height: 300px;
+          width: 200px;
+          background-image: url(icon/icon-01.png);
+          background-size: cover;
+          background-position: center;
+        }
+        &__num {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 40px 0 10px;
+          text-align: center;
+        }
+        &__under {
+          
+        }
+      }
+      &__main2 {
+        &__text2 {
+          height: 300px;
+          width: 200px;
+          background-image: url(icon/icon-03.png);
+          background-size: cover;
+          background-position: center;
+        }
+        &__num {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 40px 0 10px;
+          text-align: center;
+        }
+      }
+      &__main3 {
+        &__text3 {
+          height: 300px;
+          width: 200px;
+          background-image: url(icon/icon-04.png);
+          background-size: cover;
+          background-position: center;
+        }
+        &__num {
+          font-size: 20px;
+          font-weight: bold;
+          margin: 40px 0 10px;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__section4 {
+    background: #f8f8f8;
+    &__box {
+      height: 500px;
+      padding: 80px 0;
+      padding-bottom: 40px;
+      &__title {
+        text-align: center;
+        font-size: 28px;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      &__main {
+        &__sub {
+          text-align: center;
+          font-size: 24px;
+          color: $maincolor;
+          font-weight: bold;
+        }
+        &__product {
+          height: 310px;
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+          &__lists1 {
+            width: 220px;
+            height: 250px;
+            background: white;
+          &__lists1:hover {
+            background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
+            text-decoration: none; /* リンクに出てくる下線を無効にする*/ 
+          }
+            &__image {
+              img {
+                width: 220px;
+                height:170px;
+              }
+            }
+            &__list {
+              padding: 0 15px;
+              &__text {
+                font-size: 16px;
+                overflow: hidden;
+              }
+              &__text1 {
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+              }
+              &__text2 {
+                font-size: 10px;
+              }
+            }
+          }
+          &__lists2 {
+            width: 220px;
+            height: 250px;
+            margin: 0 30px;
+            background: white;
+
+            &__image {
+              img {
+                width: 220px;
+                height:170px;
+              }
+            }
+            &__list {
+              padding: 0 15px;
+              &__text {
+                font-size: 16px;
+                overflow: hidden;
+              }
+              &__text1 {
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+              }
+              &__text2 {
+                font-size: 10px;
+              }
+            }
+          }
+          &__lists3 {
+            width: 220px;
+            height: 250px;
+            background: white;
+
+            &__image {
+              img {
+                width: 220px;
+                height:170px;
+              }
+            }
+            &__list {
+              padding: 0 15px;
+              &__text {
+                font-size: 16px;
+                overflow: hidden;
+              }
+              &__text1 {
+                font-size: 16px;
+                display: flex;
+                justify-content: space-between;
+              }
+              &__text2 {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+    &__box1 {
+      height: 500px;
+      padding: 80px 0 0;
+      &__title {
+        text-align: center;
+        font-size: 28px;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      &__main {
+        &__sub {
+          text-align: center;
+          font-size: 24px;
+          color: $maincolor;
+          font-weight: bold;
+        }
+        &__product {
+          height: 310px;
+          display: flex;
+          justify-content: center;
+          padding-top: 30px;
+          &__lists1 {
+            width: 220px;
+            height: 250px;
+          }
+          &__lists2 {
+            width: 220px;
+            height: 250px;
+            margin: 0 30px;
+          }
+          &__lists3 {
+            width: 220px;
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+  &__section5 {
+    height: 400px;
+    background-image: url(pict/bg-appBanner-pict.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px 160px;
+    text-align: center;
+    padding: 100px 40px;
+    &__center {
+      &__h1 {
+        color: #fff;
+        font-size: 27px;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      &__p1 {
+        font-size: 18px;
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+      }
+      &__box {
+        display: flex;
+        padding-top: 30px;
+        justify-content: center;
+        &__logo {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/bn_app_store.png);
+          margin-right: 10px;
+        }
+        &__logo1 {
+          height: 100px;
+          width: 280px;
+          background-size: cover;
+          background-position: center;
+          background-image: url(pict/google_play@2x.png);
+        }
+      }
+    }
+  }
+}
