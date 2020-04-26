@@ -43,3 +43,9 @@
     }
   }
 }
+a{
+ color: $font-color; 
+}
+a:hover{
+  cursor: pointer;
+}
