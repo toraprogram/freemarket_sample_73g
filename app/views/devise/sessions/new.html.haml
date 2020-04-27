@@ -1,7 +1,4 @@
 .top
-  -# .top__header
-  -#   .top__header__box
-  -#     .top__header__box__icon
   = render "items/miniheader"
   .top__middle
     .top__middle__new
@@ -19,11 +16,8 @@
       %h2.top__middle__center__main 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .top__middle__center__main__mail
-          -# = f.label :メールアドレス
-          -# %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
         .top__middle__center__main__pass
-          -# = f.label :パスワード
           %br/
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
         .top__middle__center__main__lock
@@ -33,20 +27,6 @@
             %br
             ません
           .top__middle__center__main__lock__small プライバシー-利用規約
-        -# - if devise_mapping.rememberable?
-          -# .field
-          -#   = f.check_box :remember_me
-          -#   -# = f.label :remember_me
         .top__middle__center__main__login
           = f.submit "ログイン"
-      -# = render "devise/shared/links"
-  
   = render "items/footer"
-  -# .top__footer
-  -#   .top__footer__box
-  -#     %ul.top__footer__box__lists
-  -#       %li.top__footer__box__lists__list1 プライバシーポリシー
-  -#       %li.top__footer__box__lists__list2 FURIMA利用規約
-  -#       %li.top__footer__box__lists__list3 特定特定商品取引に関する表記
-  -#     .top__footer__box__img 
-  -#     .top__footer__box__small @ Furima, Inc.
