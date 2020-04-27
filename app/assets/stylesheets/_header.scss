@@ -1,0 +1,71 @@
+.header {
+  &__main {
+    margin: 0 auto;
+    width: 1050px;
+    height: 100px;
+    margin-top: 20px;
+    padding: 0;
+    &__inner {
+      height: 35px;
+      position: relative;
+      &__icon {
+        a {
+          position: absolute;
+        }
+        img {
+          max-width: 170px;
+          padding-right: 30px;
+          border-radius: 6px;
+        }
+      }
+      &__key {
+        padding-left: 170px;
+        display: flex;
+          input {
+          width: 820px;
+          height: 36px;
+          }
+          &__search {
+            height: 38px;
+            width: 30px;
+            img {
+            max-width: 35px;
+            background-color: $maincolor;
+            border: 0;
+            cursor: pointer;
+            padding: 8px;
+            } 
+          }
+      } 
+    }
+    &__bottom {
+      height: 45px;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px; 
+      &__left {
+        background: white;
+        height: 45px;
+        width: 200px;
+        font-size: 12px;
+        &__ul {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+      &__right {
+        background: white;
+        height: 45px;
+        width: 200px;
+        font-size: 12px;
+        &__ul {
+          display: flex;
+          justify-content: space-between;
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+}
+
+

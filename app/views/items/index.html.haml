@@ -1,0 +1,161 @@
+.wrapper
+  = render "header"
+  .main
+    .main__section
+      .main__section__center
+        %h1.main__section__center__h1 人生を変えるフリマアプリ
+        %p.main__section__center__p1 FURIMAは誰でもかんたんに出品・購入できる
+        %p.main__section__center__p2 フリマアプリです
+        .main__section__center__box
+          .main__section__center__box__logo
+          .main__section__center__box__logo1
+          
+    .main__section1
+      %h2.main__section1__middle 
+        FURIMAが選ばれる3つの理由
+      .main__section1__line
+      %ul.main__section1__box
+        .main__section1__box__main1
+          .main__section1__box__main1__text1 
+            .main__section1__box__main1__text1__num 1
+          %b.main__section1__box__main1__under 3分
+          %b.main__section1__box__main1__bottom ですぐに出品
+          %p.main__section1__box__main1__letter1 スマホで入力するだけで簡単に出品できる！
+
+        .main__section__box__main2
+          .main__section1__box__main2__text2 
+            .main__section1__box__main2__text2__num 2
+          %b.main__section1__box__main2__under シンプル
+          %b.main__section1__box__main2__bottom で使いやすい
+          %p.main__section1__box__main2__letter2 めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+        .main__section__box__main3
+          .main__section1__box__main3__text3 
+            .main__section1__box__main3__text3__num 3
+          %b.main__section1__box__main3__under 手数料
+          %b.main__section1__box__main3__bottom 業界最安
+          %p.main__section1__box__main3__letter3 最大3%でお得に出品&購入！
+
+    .main__section2
+      .main__section2__center
+        %h1.main__section2__center__h1 会員数日本一位
+        %p.main__section2__center__p1 
+          FURIMAは、フリマアプリで最も人気。
+          %br 
+          出品・購入回数も業界最多です！
+          %br 
+          ほしかったあの商品に出会えるかもしれません。
+        .main__section2__center__box
+          .main__section2__center__box__logo
+          .main__section2__center__box__logo1
+
+    .main__section3
+      %h2.main__section3__middle 
+        FURIMAの特徴
+      .main__section3__line
+      %ul.main__section3__box
+        .main__section3__box__main1
+          .main__section3__box__main1__text1 
+          .main__section3__box__main1__num 簡単に売り買いできる
+          %p.main__section3__box__main1__under 
+            スマホひとつで、いつでもどこでも簡単
+            %br 
+            に出品・購入が可能！
+        .main__section3__box__main2
+          .main__section3__box__main2__text2 
+          .main__section3__box__main2__num 売上金は即日振込みに対応
+          %p.main__section3__box__main2__under 
+            午前9時までに振込を依頼いただけれ
+            %br 
+            ば、翌日に指定の口座に入金いたします!
+            
+        .main__section3__box__main3
+          .main__section3__box__main3__text3 
+          .main__section3__box__main3__num 様々な支払いに対応
+          %p.main__section3__box__main3__under 
+            お支払いは、クレジットカードだけでなく、
+            %br 
+            ポイントや売上金など多彩な方法が
+            %br 
+            あります。
+    .main__section4
+      .main__section4__box
+        %h2.main__section4__box__title ピックアップカテゴリー
+        .main__section4__box__main
+          .main__section4__box__main__sub 新規投稿商品
+          .main__section4__box__main__product
+            .main__section4__box__main__product__lists1
+              .main__section4__box__main__product__lists1__image 
+                = link_to image_tag "pict/sakana.png"
+              .main__section4__box__main__product__lists1__list
+                .main__section4__box__main__product__lists1__list__text product3
+                .main__section4__box__main__product__lists1__list__text1 
+                  .main__section4__box__main__product__lists1__list__text1__left 30000円
+                  .main__section4__box__main__product__lists1__list__text1__right ★ 0
+                .main__section4__box__main__product__lists1__list__text2 (税込み)
+                
+            .main__section4__box__main__product__lists2
+              .main__section4__box__main__product__lists2__image
+                = link_to image_tag "pict/gyouza.png"
+              .main__section4__box__main__product__lists2__list
+                .main__section4__box__main__product__lists2__list__text product2
+                .main__section4__box__main__product__lists2__list__text1 
+                  .main__section4__box__main__product__lists2__list__text1__left 20000円
+                  .main__section4__box__main__product__lists2__list__text1__right ★ 0
+                .main__section4__box__main__product__lists2__list__text2 (税込み)
+
+            .main__section4__box__main__product__lists3
+              .main__section4__box__main__product__lists3__image
+                = link_to image_tag "pict/curry.png"
+              .main__section4__box__main__product__lists3__list
+                .main__section4__box__main__product__lists3__list__text product1
+                .main__section4__box__main__product__lists3__list__text1 
+                  .main__section4__box__main__product__lists3__list__text1__left 10000円
+                  .main__section4__box__main__product__lists3__list__text1__right ★ 0
+                .main__section4__box__main__product__lists3__list__text2 (税込み)
+
+      .main__section4__box1
+        %h2.main__section4__box1__title ピックアップブランド
+        .main__section4__box1__main
+          .main__section4__box1__main__sub アーカイバ
+          .main__section4__box1__main__product
+            .main__section4__box__main__product__lists1
+              .main__section4__box__main__product__lists1__image 
+                = link_to image_tag "pict/sakana.png"
+              .main__section4__box__main__product__lists1__list
+                .main__section4__box__main__product__lists1__list__text product3
+                .main__section4__box__main__product__lists1__list__text1 
+                  .main__section4__box__main__product__lists1__list__text1__left 30000円
+                  .main__section4__box__main__product__lists1__list__text1__right ★ 0
+                .main__section4__box__main__product__lists1__list__text2 (税込み)
+                
+            .main__section4__box__main__product__lists2
+              .main__section4__box__main__product__lists2__image
+                = link_to image_tag "pict/gyouza.png"
+              .main__section4__box__main__product__lists2__list
+                .main__section4__box__main__product__lists2__list__text product2
+                .main__section4__box__main__product__lists2__list__text1 
+                  .main__section4__box__main__product__lists2__list__text1__left 20000円
+                  .main__section4__box__main__product__lists2__list__text1__right ★ 0
+                .main__section4__box__main__product__lists2__list__text2 (税込み)
+
+            .main__section4__box__main__product__lists3
+              .main__section4__box__main__product__lists3__image
+                = link_to image_tag "pict/curry.png"
+              .main__section4__box__main__product__lists3__list
+                .main__section4__box__main__product__lists3__list__text product1
+                .main__section4__box__main__product__lists3__list__text1 
+                  .main__section4__box__main__product__lists3__list__text1__left 10000円
+                  .main__section4__box__main__product__lists3__list__text1__right ★ 0
+                .main__section4__box__main__product__lists3__list__text2 (税込み)
+
+    .main__section5
+      .main__section5__center
+        %h1.main__section5__center__h1 だれでもかんたん、人生を変えるフリマアプリ
+        %p.main__section5__center__p1 
+          今すぐ無料ダウンロード
+          .main__section5__center__box
+            .main__section5__center__box__logo
+            .main__section5__center__box__logo1
+            
+  = render "footer"

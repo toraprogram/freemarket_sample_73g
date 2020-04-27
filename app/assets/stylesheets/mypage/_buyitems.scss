@@ -1,0 +1,60 @@
+.wrapper {
+  .buyitems {
+    width: calc(100% - 300px);
+    background-color: $background-color;
+    display: flex;
+    &__contents{
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      &_buyitems{
+        width: 100%;
+        height: 250px;
+        font-size: 25px;
+        padding: 30px;
+        margin-top: 50px;
+        background-color: $base-color;
+        display: flex;
+        position: relative;
+        &_box{
+          width: calc(100% - 60px);
+          position: absolute;
+          bottom: 30px;
+          display: flex;
+          &_trading{
+            width: 50%;
+            font-size: 20px;
+            text-align: center;
+            &_list{
+              ul{
+                display: flex;
+                justify-content: space-around;
+                padding: 0 30px;
+                li{
+                  height: 80px;
+                  line-height: 80px;
+                }
+              }
+            }
+          }
+          &_traded{
+            width: 50%;
+            font-size: 20px;
+            text-align: center;
+            &_list{
+              ul{
+                display: flex;
+                justify-content: space-around;
+                padding: 0 30px;
+                li{
+                  height: 80px;
+                  line-height: 80px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }  
+}
