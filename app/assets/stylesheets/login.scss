@@ -1,0 +1,181 @@
+.top {
+  background-color: white;
+  &__header {
+    height: 150px;
+    &__box {
+      padding-top: 10px;
+      width: 400px;
+      margin: 0 auto;
+      &__icon {
+        background-image: url(logo/logo.png);
+        background-size: cover;
+        background-position: center;
+        height: 116px;
+        width: 400px;
+      }
+    }
+  }
+  &__middle {
+    text-align: center;
+    background-color: white;
+    width: 450px;
+    margin: 0 auto;
+    &__new {
+      height: 140px;
+      padding-top: 30px;
+      border-bottom: solid 1px #f8f8f8;
+      &__title {
+      }
+      &__box {
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 40px;
+        color: white;
+        height: 40px;
+        width: 350px;
+        background-color: skyblue;
+        // text-align: center;
+        margin: 0 auto;
+      }
+    }
+    &__inner {
+      height: 180px;
+      padding: 32px 50px;
+      &__box {
+        border-bottom: solid 1px #f8f8f8;
+        &__top {
+          cursor: pointer;
+          background-color: #385185;
+          line-height: 50px;
+          border: solid 1px;
+          color: #385185;
+          width: 350px;
+          font-size: 14px;
+          height: 50px;
+          display: flex;
+          .fab {
+            padding-top: 12px;
+            padding-left: 10px;
+            font-size: 28px;
+            color: white;
+          }
+          &__text {
+            margin: 0 auto;
+            color: white;
+          }
+        }
+        &__under {
+          cursor: pointer;
+          margin-top: 20px;
+          line-height: 50px;
+          border: solid 1px;
+          color: black;
+          width: 350px;
+          font-size: 14px;
+          height: 50px;
+          display: flex;
+          .fab {
+            color: turquoise;
+            padding-top: 14px;
+            padding-left: 10px;
+            font-size: 24px;
+          }
+          &__text {
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+    &__center {
+      height: 400px;
+      &__main {
+        &__mail {
+          input {
+            border-radius: 5%;
+            height: 50px;
+            width: 350px;
+          }
+        }
+        &__pass {
+          input {
+            border-radius: 2px;
+            height: 50px;
+            width: 350px;
+          }
+        }
+        &__lock {
+          height: 80px;
+          width: 300px;
+          border: solid 1px black;
+          margin-left: 50px;
+          margin-top: 20px;
+          background-color: #f8f8f8;
+          display: flex;
+          button {
+            height: 30px;
+            width: 30px;
+            border-radius: 3px;
+            margin-top: 25px;
+            margin-left: 18px;
+          }
+          button:active {
+            background-color: #3CCACE;
+            
+          }
+          button:hover action {}
+          &__comment {
+            padding: 20px 0;
+            font-size: 14px;
+          }
+          &__small {
+            font-size: 10px;
+            padding-top: 65px;
+          }
+        }
+        &__login {
+          margin-top: 20px;
+          input {
+            background-color: #3CCACE;
+            height: 50px;
+            width: 350px;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+  // &__footer {
+  //   height: 220px;
+    // width: 450px;
+  //   margin: 0 auto;
+  //   &__box {
+  //     padding: 40px 0;
+  //     &__lists {
+  //       justify-content: center;
+  //       display: flex;
+  //       font-size: 10px;
+  //       padding-bottom: 10px;
+  //       &__list2 {
+  //         padding: 0 20px;
+  //       }
+  //     }
+  //     &__img {
+  //       background-image: url(logo/logo.png);
+  //       background-size: cover;
+  //       background-position: center;
+  //       height: 120px;
+  //       // width: 400px;
+  //       max-width: 440px;
+  //     }
+  //     &__small {
+  //       font-size: 10px;
+  //       text-align: center;
+  //     }
+  //   }
+  // }
+}
+
+
+
+
+

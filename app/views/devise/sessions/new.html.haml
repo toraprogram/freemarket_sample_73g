@@ -1,17 +1,52 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.top
+  -# .top__header
+  -#   .top__header__box
+  -#     .top__header__box__icon
+  = render "items/miniheader"
+  .top__middle
+    .top__middle__new
+      .top__middle__new__title アカウントをお持ちでない方はこちら
+      .top__middle__new__box 新規会員登録
+    .top__middle__inner
+      .top__middle__inner__box
+        .top__middle__inner__box__top 
+          = icon('fab', 'facebook-square') 
+          .top__middle__inner__box__top__text Facebookでログイン
+        .top__middle__inner__box__under 
+          = icon('fab', 'google')
+          .top__middle__inner__box__under__text Googleでログイン
+    .top__middle__center
+      %h2.top__middle__center__main 
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .top__middle__center__main__mail
+          -# = f.label :メールアドレス
+          -# %br/
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
+        .top__middle__center__main__pass
+          -# = f.label :パスワード
+          %br/
+          = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+        .top__middle__center__main__lock
+          %button.top__middle__center__main__lock__button
+          .top__middle__center__main__lock__comment 
+            私はロボットではあり
+            %br
+            ません
+          .top__middle__center__main__lock__small プライバシー-利用規約
+        -# - if devise_mapping.rememberable?
+          -# .field
+          -#   = f.check_box :remember_me
+          -#   -# = f.label :remember_me
+        .top__middle__center__main__login
+          = f.submit "ログイン"
+      -# = render "devise/shared/links"
+  
+  = render "items/footer"
+  -# .top__footer
+  -#   .top__footer__box
+  -#     %ul.top__footer__box__lists
+  -#       %li.top__footer__box__lists__list1 プライバシーポリシー
+  -#       %li.top__footer__box__lists__list2 FURIMA利用規約
+  -#       %li.top__footer__box__lists__list3 特定特定商品取引に関する表記
+  -#     .top__footer__box__img 
+  -#     .top__footer__box__small @ Furima, Inc.
