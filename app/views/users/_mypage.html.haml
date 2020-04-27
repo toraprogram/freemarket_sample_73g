@@ -1,0 +1,27 @@
+.main
+  .main__contents
+    .main__contents_myinfo
+      .main__contents_myinfo_icon
+        = icon("fas", "user-circle", class: 'icon')
+      .main__contents_myinfo_nickname
+        %p nickname
+      %ul.main__contents_myinfo_info
+        %li 評価 0
+        %li 出品 0
+      .main__contents_myinfo_message
+        %p お知らせメッセージ表示欄
+    .main__contents_myitems
+      %p 購入した商品
+      .main__contents_myitems_box
+        .main__contents_myitems_box_trading
+          %p 取引中
+          .main__contents_myitems_box_trading_list
+            %ul
+              %li item1
+              %li item2
+        .main__contents_myitems_box_traded
+          %p 過去の取引
+          .main__contents_myitems_box_traded_list
+            %ul
+              %li item3
+              %li item4

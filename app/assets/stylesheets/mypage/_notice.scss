@@ -1,0 +1,36 @@
+.wrapper {
+  .notice {
+    width: calc(100% - 300px);
+    background-color: $background-color;
+    display: flex;
+    text-align: center;
+    &__contents{
+      width: 80%;
+      height: 250px;
+      margin: 0 auto;
+      margin-top: 50px;
+      background-color: $base-color;
+      display: flex;
+      position: relative;
+      &_head{
+        width: 100%;
+        font-size: 25px;
+        padding: 30px;
+        p{
+          border-bottom: 2px solid $maincolor;
+        }
+      }
+      &_box{
+        width: calc(100% - 60px);
+        text-align: left;
+        position: absolute;
+        bottom: 30px;
+        &_list{
+          li{
+            padding: 5px 30px;
+          }
+        }
+      }
+    }
+  }
+}

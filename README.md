@@ -28,7 +28,7 @@
 |------|----|-------|
 ||user_id|references|null: false, foreign_key: true|
 |postal_code|string|null: false|
-|prefecture|integer|null: false|
+|prefecture|string|null: false|
 |city|string|null: false|
 |block|string|-|
 |building|string|-|
@@ -36,7 +36,7 @@
 ## Association
 - belongs_to :user
 
-## cardテーブル(gem 'payjp'を使用)
+## cardsテーブル(gem 'payjp'を使用)
 |Column|Type|Options|
 |------|----|-------|
 ||user_id|references|null: false, foreign_key: true|
@@ -61,14 +61,12 @@
 |delivery_day|string|null: false|
 |size|string|null: false|
 |state|boolean|default: false,null: false|
-|seller_id|referencesforeign_key: true|
-|size|string|null: false|
+|buyer_id|referencesforeign_key: true|
 |shipping_method|string|null: false|
-|image_id|references|foreign_key: true|
 ### Association
-- has_many: images
 - has_many: comment
 - has_many: likes, dependent: :destroy
+- has_many: images, dependent: :destroy
 - belongs_to :buyer, class_name: "User"
 - belongs_to :seller, class_name: "User"
 - belongs_to :category
@@ -79,6 +77,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|strig|null: false|
+|item_id|references|foreign_key: true|
 ### Association
 - belongs_to :item
 
@@ -98,7 +97,7 @@
 ### Association
 - has_many: items
 - has_many: category_brands
-- has_many: categories, through: category_brands
+- has_many: categories, through: :category_brands
 
 ## category_brandsテーブル
 |Column|Type|Options|
