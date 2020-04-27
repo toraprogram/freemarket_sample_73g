@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.middle {
+  &__text{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    &__up{
+      background-color: white;
+      text-align: center;
+      padding: 30px;
+      font-size: 20px;
+      border-bottom: solid 1px;
+    }
+    &__down{
+      padding: 24px 16px 40px;
+      &__input{
+        max-width: 300px;
+        margin: 0 auto;
+        &__form1{
+          display: flex;
+          &__h1{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__form2{
+          display: flex;
+          &__h2{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__form3{
+          display: flex;
+          &__h3{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__form4{
+          &__h4{
+            &__next{
+              font-size: 12px;
+            }
+          }
+        }
+        &__form5{
+          display: flex;
+          &__h5{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__name5{
+          display: flex;
+          input{
+            width: 165px;
+            margin-right: 10px;
+          }
+        }
+        &__form6{
+          display: flex;
+          &__h6{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__name6{
+          display: flex;
+          input{
+            width: 165px;
+            margin-right: 10px;
+          }
+        }
+        &__form7{
+          display: flex;
+          &__h7{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+          &__next{
+            color: #888;
+            font-size: 12px;
+            margin-top: 20px;
+          }
+        }
+        &__form99{
+          display: flex;
+          &__h99{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
+        &__form9{
+          text-align: right;
+          font-size: 12px;
+        }
+        &__form10{
+          color: #888;
+          font-size: 12px;
+        }
+      }
+      &__form{
+        display: flex;
+        justify-content: center;
+        input{
+          height: 50px;
+          width: 350px;
+          background-color: yellow;
+        }
+      }
+    }
+  }
+}
+
+p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+input{
+  border-radius: 5px;
+}
+
