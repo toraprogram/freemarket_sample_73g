@@ -1,10 +1,8 @@
 .upform {
   margin: 0 auto;
   height: 2400px;
-  width: 750px;
+  width: 740px;
   &__picture {
-    height: 300px;
-    width: 670px;
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
@@ -31,7 +29,6 @@
     &__upload {
       margin: 20px 0;
       border: dotted 2px;
-      height: 100px;
       text-align: center;
       padding-top: 70px;
       padding-bottom: 40px;
@@ -41,8 +38,6 @@
   }
 
   &__itemname {
-    height: 400px;
-    width: 670px;
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
@@ -96,9 +91,7 @@
     }
   }
 
-  &__itemdate{
-    height: 370px;
-    width: 670px;
+  &__itemdate {
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
@@ -182,8 +175,6 @@
   }
 
   &__delivery {
-    height: 370px;
-    width: 670px;
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
@@ -267,8 +258,7 @@
   }
 
   &__price {
-    height: 280px;
-    width: 670px;
+    height: 350px;
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
@@ -278,7 +268,7 @@
       margin-bottom: 30px;
     }
     &__title {
-      ont-size: 16px;
+      font-size: 16px;
       font-weight: bold;
       float: left;
       padding-top: 10px;
@@ -339,8 +329,6 @@
     }
   }
   &__itemupper {
-    height: 60px;
-    width: 720px;
     padding: 15px;
     margin-top: 5px;
     display: flex;
@@ -363,8 +351,6 @@
   }
 
   &__returnkey {
-    height: 60px;
-    width: 720px;
     padding: 15px;
     margin-top: 5px;
     display: flex;
@@ -382,7 +368,5 @@
       }
     }
   }
-
-
 
 }
