@@ -1,0 +1,388 @@
+.form {
+  margin: 0 auto;
+  height: 2400px;
+  width: 750px;
+  &__picture {
+    height: 300px;
+    width: 670px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__text {
+      font-size: 16px;
+      margin-top: 50px;
+    }
+    &__upload {
+      margin: 20px 0;
+      border: dotted 2px;
+      height: 100px;
+      text-align: center;
+      padding-top: 70px;
+      padding-bottom: 40px;
+      background-color: lightgrey;
+      font-size: 13px;
+    }
+  }
+
+  &__itemname {
+    height: 400px;
+    width: 670px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__name {
+      margin-top: 45px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__secondname {
+      margin-top: 80px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 220px;
+        }
+    }
+  }
+
+  &__itemdate{
+    height: 370px;
+    width: 670px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__category {
+      margin-top: 68px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__brandname {
+      margin-top: 70px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__thirdmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__condition {
+      margin-top: 70px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+  }
+
+  &__delivery {
+    height: 370px;
+    width: 670px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 30px;
+    }
+    &__title {
+      ont-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__postage {
+      margin-top: 68px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__area {
+      margin-top: 70px;
+      margin-bottom: 30px;
+        input {
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__thirdmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__days {
+      margin-top: 70px;
+      margin-bottom: 30px;
+        input {
+          height: 36px;
+          width: 650px;
+        }
+    }
+  }
+
+  &__price {
+    height: 280px;
+    width: 670px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 30px;
+    }
+    &__title {
+      ont-size: 16px;
+      font-weight: bold;
+      float: left;
+      padding-top: 10px;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      float: left;
+    }
+    &__yenmark {
+      margin-left: 200px;
+      float: left;
+      padding-top: 10px;
+    }
+    &__saleprice {
+      float: left;
+      margin-left: 5px;
+        input {
+          width: 300px;
+          height: 36px;
+        }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      margin-top: 40px;
+      float: left;
+    }
+    &__minuskey {
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 40px;
+      float: right;
+    }
+    &__underline {
+      height: 10px;
+      width: 650px;
+      border-bottom: solid 1px gray;
+      float: left;
+      margin-top: 30px;
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      margin-top: 40px;
+      float: left;
+    }
+    &__secondminuskey {
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 40px;
+      float: right;
+    }
+  }
+  &__itemupper {
+    height: 60px;
+    width: 720px;
+    padding: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    &__button {
+      a {
+        display: block;
+        font-size: 25px;
+        color: black;
+        background-color: #3CCACE;
+        border-radius: 10px;
+        height: 70px;
+        width: 240px;
+        line-height: 70px;
+        text-align: center;
+        border: 1px solid #3CCACE;;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__returnkey {
+    height: 60px;
+    width: 720px;
+    padding: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    &__button {
+      a {
+        display: block;
+        font-size: 16px;
+        color: black;
+        height: 35px;
+        width: 240px;
+        line-height: 35px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
+
+
+}
