@@ -1,0 +1,33 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "side"
+    .userdata
+      .userdata__contents
+        .userdata__contents_head
+          %p 本人情報変更
+        %ul.userdata__contents_form
+          %li.userdata__contents_form_user-info
+            %p 名前
+            %p フリガナ
+            %p 生年月日
+          %li.userdata__contents_form_user-areacode
+            %p 郵便番号
+            %input
+          %li.userdata__contents_form_user-prefectures
+            %p 都道府県
+            %input
+          %li.userdata__contents_form_user-cities
+            %p 市町村
+            %input
+          %li.userdata__contents_form_user-block
+            %p 番地
+            %input
+          %li.userdata__contents_form_user-building
+            %p 建物名
+            %input
+          %li.userdata__contents_form_user-phone
+            %p 電話番号
+            %input
+        .userdata__contents_btn
+          %input{type: "submit",class: "userdata__contents_submit", value: "変更する"}

@@ -1,0 +1,32 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "side"
+    .address
+      .address__contents
+        .address__contents_head
+          %p 住所変更
+        %ul.address__contents_form
+          %li.address__contents_form_name
+            %p 名前さんのお届け先住所
+          %li.address__contents_form_areacode
+            %p 郵便番号
+            %input
+          %li.address__contents_form_prefectures
+            %p 都道府県
+            %input
+          %li.address__contents_form_cities
+            %p 市町村
+            %input
+          %li.address__contents_form_block
+            %p 番地
+            %input
+          %li.address__contents_form_building
+            %p 建物名
+            %input
+          %li.address__contents_form_phone
+            %p 電話番号
+            %input
+        .address__contents_btn
+          %input{type: "submit",class: "address__contents_submit", value: "変更する"}
+  = render "items/footer"
