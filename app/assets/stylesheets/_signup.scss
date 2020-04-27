@@ -4,6 +4,14 @@
 }
 
 .middle {
+  p{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  input{
+    border-radius: 5px;
+  }
   &__text{
     width: 700px;
     background-color: white;
@@ -179,14 +187,3 @@
     }
   }
 }
-
-p{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 16px;
-}
-
-input{
-  border-radius: 5px;
-}
-

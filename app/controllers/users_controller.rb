@@ -9,4 +9,8 @@ class UsersController < ApplicationController
   def edit
     render "users/#{params[:name]}", locals: {user: current_user}
   end
+
+  def new
+  end
 end
+
