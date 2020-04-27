@@ -1,0 +1,18 @@
+.header
+  .header__main
+    .header__main__inner
+      .header__main__inner__icon
+        = link_to image_tag "logo/logo.png"
+      .header__main__inner__key
+        %input{placeholder: "キーワードから探す"}
+          .header__main__inner__key__search
+            = link_to image_tag "icon/icon-search 1.png"
+    .header__main__bottom
+      .header__main__bottom__left
+        %ul.header__main__bottom__left__ul
+          %li.header__main__bottom__left__ul__list カテゴリー
+          %li.header__main__bottom__left__ul__list ブランド
+      .header__main__bottom__right
+        %ul.header__main__bottom__right__ul
+          %li.header__main__bottom__right__ul__list ログイン
+          %li.header__main__bottom__right__ul__list 新規会員登録

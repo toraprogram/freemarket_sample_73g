@@ -1,0 +1,10 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "side" 
+    .card
+      .card__contents
+        .card__contents_head
+          %p クレジットカード情報の登録
+        .card__contents_btn
+          %input{type: "submit",class: "card__contents_submit", value: "登録する"}

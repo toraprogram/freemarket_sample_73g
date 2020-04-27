@@ -1,0 +1,45 @@
+.side
+  .side__contents
+    %ul.side__contents_menu
+      %li 
+        = link_to "マイページ", "/users"
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "お知らせ", {controller: 'users', action: 'show', name: "notice"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "いいね一覧", {controller: 'users', action: 'show', name: "like"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        %p 出品する
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "出品一覧", {controller: 'users', action: 'show', name: "sellitems"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "購入一覧", {controller: 'users', action: 'show', name: "buyitems"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        %p お問い合わせ
+        = icon("fas", "chevron-right", class: 'icon')
+    .side__contents_title
+      %p 設定
+    %ul.side__contents_setting
+      %li
+        = link_to "プロフィール", {controller: 'users', action: 'edit', name: "profile"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "住所変更", {controller: 'users', action: 'edit', name: "address"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "クレジットカード", {controller: 'users', action: 'edit', name: "card"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "メール確認", {controller: 'users', action: 'edit', name: "mailpass"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "本人情報", {controller: 'users', action: 'edit', name: "userdata"}
+        = icon("fas", "chevron-right", class: 'icon')
+      %li
+        = link_to "ログアウト", {controller: 'users', action: 'show', name: "logout"}
+        = icon("fas", "chevron-right", class: 'icon')
