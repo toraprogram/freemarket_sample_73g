@@ -12,7 +12,7 @@ $base_color: #ffffff;
   &__section {
     padding: 0 60px;
     height: 560px;
-    background-image: url(pict/bg-mainVisual-pict_pc.jpg);
+    background-image: image-url('pict/bg-mainVisual-pict_pc.jpg');
     background-size: cover;
     background-position: center;
     &__center {
@@ -40,7 +40,7 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/bn_app_store.png);
+          background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
@@ -48,7 +48,7 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/google_play@2x.png);
+          background-image: image-url('pict/google_play@2x.png');
         }
       }
     }
@@ -74,7 +74,7 @@ $base_color: #ffffff;
       padding: 0 150px;
       &__main1 {
         &__text1 {
-          background-image: url(pict/pict-reason-01.jpg);
+          background-image: image-url('pict/pict-reason-01.jpg');
           height: 300px;
           width: 300px;
           background-size: cover;
@@ -110,7 +110,7 @@ $base_color: #ffffff;
         height: 400px;
         background: skyblue;
         &__text2 {
-          background-image: url(pict/pict-reason-02.jpg);
+          background-image: image-url('pict/pict-reason-02.jpg');
           height: 300px;
           width: 300px;
           background-size: cover;
@@ -146,7 +146,7 @@ $base_color: #ffffff;
         height: 400px;  
         background: skyblue;
         &__text3 {
-          background-image: url(pict/pict-reason-03.jpg);
+          background-image: image-url('pict/pict-reason-03.jpg');
           height: 300px;
           width: 300px;
           background-size: cover;
@@ -183,7 +183,7 @@ $base_color: #ffffff;
   &__section2 {
     height: 400px;
     background: pink;
-    background-image: url(pict/bg-topMiddleDl-pict.jpg);
+    background-image: image-url('pict/bg-topMiddleDl-pict.jpg');
     background-size: cover;
     background-position: center;
     padding: 100px 160px;
@@ -209,7 +209,7 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/bn_app_store.png);
+          background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
@@ -217,14 +217,14 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/google_play@2x.png);
+          background-image: image-url('pict/google_play@2x.png');
         }
       }
     }
   }
   &__section3 {
     height: 740px;
-    width: 1440px;
+    // width: 1440px;
     padding: 60px 100px;
     &__middle {
       text-align: center;
@@ -247,7 +247,7 @@ $base_color: #ffffff;
         &__text1 {
           height: 300px;
           width: 200px;
-          background-image: url(icon/icon-01.png);
+          background-image: image-url('icon/icon-01.png');
           background-size: cover;
           background-position: center;
         }
@@ -265,7 +265,7 @@ $base_color: #ffffff;
         &__text2 {
           height: 300px;
           width: 200px;
-          background-image: url(icon/icon-03.png);
+          background-image: image-url('icon/icon-03.png');
           background-size: cover;
           background-position: center;
         }
@@ -280,7 +280,7 @@ $base_color: #ffffff;
         &__text3 {
           height: 300px;
           width: 200px;
-          background-image: url(icon/icon-04.png);
+          background-image: image-url('icon/icon-04.png');
           background-size: cover;
           background-position: center;
         }
@@ -322,8 +322,8 @@ $base_color: #ffffff;
             height: 250px;
             background: white;
           &__lists1:hover {
-            background-color: #c9c9c9; /* 背景色をグレー（#c9c9c9）にする */
-            text-decoration: none; /* リンクに出てくる下線を無効にする*/ 
+            background-color: #c9c9c9; 
+            text-decoration: none; 
           }
             &__image {
               img {
@@ -445,7 +445,7 @@ $base_color: #ffffff;
   }
   &__section5 {
     height: 400px;
-    background-image: url(pict/bg-appBanner-pict.jpg);
+    background-image: image-url('pict/bg-appBanner-pict.jpg');
     background-size: cover;
     background-position: center;
     padding: 100px 160px;
@@ -473,7 +473,7 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/bn_app_store.png);
+          background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
@@ -481,7 +481,7 @@ $base_color: #ffffff;
           width: 280px;
           background-size: cover;
           background-position: center;
-          background-image: url(pict/google_play@2x.png);
+          background-image: image-url('pict/google_play@2x.png');
         }
       }
     }

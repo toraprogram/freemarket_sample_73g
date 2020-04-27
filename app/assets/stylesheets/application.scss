@@ -1,11 +1,14 @@
+@import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "reset";
 @import "top";
 @import "header";
+@import "miniheader";
+@import "form";
 @import "mypage/side";
 @import "mypage/page";
 @import "mypage/address";
+@import "mypage/notice";
 @import "mypage/buyitems";
 @import "mypage/card";
 @import "mypage/like";
@@ -16,3 +19,4 @@
 @import "mypage/userdata";
 @import "item/detail";
 @import "footer";
+@import "signup";
