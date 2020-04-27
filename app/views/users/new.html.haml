@@ -1,0 +1,87 @@
+.container
+  = render "miniheader"
+  
+  %main.middle
+    .middle__text
+      .middle__text__up
+        会員情報入力
+      .middle__text__down
+        .middle__text__down__input
+          
+          .middle__text__down__input__form1
+            %p.middle__text__down__input__form1__h1
+              ニックネーム
+              .middle__text__down__input__form1__h1__must 
+                必須
+          %input{placeholder: "例）フリマ太郎", type: "string", name: "nickname"}
+
+          .middle__text__down__input__form2
+            %p.middle__text__down__input__form2__h2
+              メールアドレス
+              .middle__text__down__input__form2__h2__must
+                必須
+          %input{placeholder: "PC,携帯どちらでも可", type: "string", name: "email"}
+
+          .middle__text__down__input__form3
+            %p.middle__text__down__input__form3__h3
+              パスワード
+              .middle__text__down__input__form3__h3__must
+                必須
+          %input{placeholder: "7文字以上の半角英数字", type: "string", name: "password"}
+
+          .middle__text__down__input__form4
+            %p.middle__text__down__input__form4__h4
+              本人確認
+              .middle__text__down__input__form4__h4__next
+                安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+          .middle__text__down__input__form5
+            %p.middle__text__down__input__form5__h5
+              お名前(全角)
+              .middle__text__down__input__form5__h5__must
+                必須
+          .middle__text__down__input__name5
+            %input{placeholder: "例）山田", type: "string", name: "family_name"}
+            %input{placeholder: "例）綾", type: "string", name: "first_name"}
+
+          .middle__text__down__input__form6
+            %p.middle__text__down__input__form6__h6
+              お名前カナ(全角)
+              .middle__text__down__input__form6__h6__must
+                必須
+          .middle__text__down__input__name6
+            %input{placeholder: "例）ヤマダ", type: "string", name: "family_name_name"}
+            %input{placeholder: "例）アヤ", type: "string", name: "first_name_name"}
+          
+          .middle__text__down__input__form7
+            %p.middle__text__down__input__form7__h7
+              生年月日
+              .middle__text__down__input__form7__h7__must
+                必須
+          %input{type: "date", name: "birthday"}
+
+          .middle__text__down__input__form99
+            %p.middle__text__down__input__form99__h99
+              電話番号
+              .middle__text__down__input__form99__h99__must
+                必須
+          %input{type: "string", name: "phone_authy"}
+
+            .middle__text__down__input__form7__next
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+          
+          %p.middle__text__down__input__form8__h8
+            「次へ進む」のボタンを押すことにより、利用規約に同意したものとみなします
+          .middle__text__down__form
+            %input{type: "submit", value: "次へ進む"}
+
+          %p.middle__text__down__input__form9
+            = link_to "本人情報の登録について＞"
+
+          %p.middle__text__down__input__form10
+            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+
+
+  
+  
+  = render "footer"
