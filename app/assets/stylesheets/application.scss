@@ -4,7 +4,8 @@
 @import "top";
 @import "header";
 @import "miniheader";
-@import "form";
+@import "footer";
+
 @import "mypage/side";
 @import "mypage/page";
 @import "mypage/address";
@@ -17,8 +18,10 @@
 @import "mypage/profile";
 @import "mypage/sellitems";
 @import "mypage/userdata";
-@import "item/detail";
-@import "buy";
-@import "footer";
-@import "login";
-@import "signup";
+
+@import "items/detail";
+@import "items/buy";
+@import "items/form";
+
+@import "users/login";
+@import "users/signup";
