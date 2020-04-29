@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
   has_many :comment
   has_many :likes, dependent: :destroy
   has_many :images, dependent: :destroy
