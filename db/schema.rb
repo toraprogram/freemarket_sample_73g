@@ -82,13 +82,13 @@ ActiveRecord::Schema.define(version: 2020_04_24_035037) do
     t.text "description", null: false
     t.string "condition", null: false
     t.string "delivery_charge", null: false
-    t.string "delivery_method", null: false
+    t.string "delivery_method"
     t.string "region", null: false
     t.string "delivery_day", null: false
     t.string "size", null: false
     t.boolean "state", default: false, null: false
-    t.integer "buyer_id", null: false
-    t.string "shipping_method", null: false
+    t.integer "buyer_id"
+    t.string "shipping_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
