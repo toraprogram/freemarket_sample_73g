@@ -6,65 +6,66 @@
     .upform__picture__upload
       %p ドラッグアンドドロップ
       %p またはクリックしてファイルをアップロード
-    
-  .upform__itemname
-    .upform__itemname__title 商品名
-    .upform__itemname__mark 必須
-    .upform__itemname__name
-      %input{placeholder: "　40文字まで"}
-    .upform__itemname__secondtitle 商品の説明
-    .upform__itemname__secondmark 必須
-    .upform__itemname__secondname
-      %input{placeholder: "　商品の説明　（色・素材・重さ・定価・注意点など）"}
-    
-  .upform__itemdate
-    .upform__itemdate__toptitle 商品の詳細
-    .upform__itemdate__title カテゴリー
-    .upform__itemdate__mark 必須
-    .upform__itemdate__category
-      %input{placeholder: "　選択してください"}
-    .upform__itemdate__secondtitle ブランド
-    .upform__itemdate__secondmark 必須
-    .upform__itemdate__brandname
-      %input{placeholder: "　選択してください"}
-    .upform__itemdate__thirdtitle 商品の状態
-    .upform__itemdate__thirdmark 必須
-    .upform__itemdate__condition
-      %input{placeholder: "　選択してください"}
-    
-  .upform__delivery
-    .upform__delivery__toptitle 配送について
-    .upform__delivery__title 送料の負担
-    .upform__delivery__mark 必須
-    .upform__delivery__postage
-      %input{placeholder: "　選択してください"}
-    .upform__delivery__secondtitle 発送元の地域
-    .upform__delivery__secondmark 必須
-    .upform__delivery__area
-      %input{placeholder: "　選択してください"}
-    .upform__delivery__thirdtitle 発送までの日数
-    .upform__delivery__thirdmark 必須
-    .upform__delivery__days
-      %input{placeholder: "　選択してください"}
-    
-  .upform__price
-    .upform__price__toptitle 価格（¥300〜9,999,999）
-    .upform__price__title 販売価格
-    .upform__price__mark 必須
-    .upform__price__yenmark ￥
-    .upform__price__saleprice
-      %input{placeholder: "　　　　　　　　　　　　　　　0"}
-    .upform__price__secondtitle 販売手数料（10%）
-    .upform__price__minuskey ー
-    .upform__price__underline
-    .upform__price__thirdtitle 販売利益
-    .upform__price__secondminuskey ー
-    
-  .upform__itemupper
-    .upform__itemupper__button
-      = link_to "#" do
-        %p.group__btn 出品する
-    
+  = form_with model: @item, local: true, method: "POST" do |f|
+    .upform__itemname
+      .upform__itemname__title 商品名
+      .upform__itemname__mark 必須
+      .upform__itemname__name
+        = f.text_field :name, class: "input_itemName", placeholder: "40文字まで"
+      .upform__itemname__secondtitle 商品の説明
+      .upform__itemname__secondmark 必須
+      .upform__itemname__secondname
+        = f.text_field :description, class: "input_itemDescription", placeholder: "( 色・素材・重さ・定価・注意点など )"
+      .upform__itemname__thirdtitle 商品のサイズ
+      .upform__itemname__thirdmark 必須
+      .upform__itemname__thirdname 
+        = f.text_field :size, class: "input_itemSize", placeholder: "( たて × よこ、S・M・Lなど )"
+    .upform__itemdate
+      .upform__itemdate__toptitle 商品の詳細
+      .upform__itemdate__title カテゴリー
+      .upform__itemdate__mark 必須
+      .upform__itemdate__category
+        %input{placeholder: "選択してください"}
+      .upform__itemdate__secondtitle ブランド
+      .upform__itemdate__secondmark 必須
+      .upform__itemdate__brandname
+        %input{placeholder: "選択してください"}
+      .upform__itemdate__thirdtitle 商品の状態
+      .upform__itemdate__thirdmark 必須
+      .upform__itemdate__condition
+        = f.select :condition, [["&nbsp;&nbsp;選択して下さい".html_safe,"選択して下さい"],["新品、未使用","新品、未使用"],["未使用に近い","未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]]
+    .upform__delivery
+      .upform__delivery__toptitle 配送について
+      .upform__delivery__title 送料の負担
+      .upform__delivery__mark 必須
+      .upform__delivery__postage
+        = f.select :delivery_charge, [["&nbsp;&nbsp;選択して下さい".html_safe,"選択して下さい"],["送料込み（出品者負担）","送料込み（出品者負担）"],["着払い（購入者負担）","着払い（購入者負担）"]]
+      .upform__delivery__secondtitle 発送元の地域
+      .upform__delivery__secondmark 必須
+      .upform__delivery__area
+        = f.text_field :region, class: "input_itemRegion", placeholder: "選択して下さい" #地域ができたら変更
+      .upform__delivery__thirdtitle 発送までの日数
+      .upform__delivery__thirdmark 必須
+      .upform__delivery__days
+        = f.select :delivery_day, [["&nbsp;&nbsp;選択して下さい".html_safe,"選択して下さい"],["１〜２日で発送","１〜２日で発送"],["２〜３日で発送","２〜３日で発送"],["４〜５日で発送","４〜５日で発送"]]
+      
+    .upform__price
+      .upform__price__toptitle 価格（¥300〜9,999,999） 半角で入力して下さい
+      .upform__price__title 販売価格
+      .upform__price__mark 必須
+      .upform__price__yenmark ￥
+      .upform__price__saleprice
+        = f.number_field :price, class: "input_sellprice", placeholder: "0" 
+      .upform__price__secondtitle 販売手数料（10%）
+      .upform__price__minuskey ー
+      .upform__price__underline
+      .upform__price__thirdtitle 販売利益
+      .upform__price__secondminuskey ー
+      
+    .upform__itemupper
+      .upform__itemupper__button
+        = f.submit '出品する', class: "submit-btn"
+
   .upform__returnkey
     .upform__returnkey__button
       = link_to "#" do
