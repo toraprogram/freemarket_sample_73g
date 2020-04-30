@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_035037) do
     t.string "condition", null: false
     t.string "delivery_charge", null: false
     t.string "delivery_method"
-    t.string "region", null: false
+    t.integer "prefecture_id", null: false
     t.string "delivery_day", null: false
     t.string "size", null: false
     t.boolean "state", default: false, null: false

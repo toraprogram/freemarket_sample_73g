@@ -1,12 +1,17 @@
 .upform
-  .upform__picture
-    .upform__picture__title 出品画像
-    .upform__picture__mark 必須
-    .upform__picture__text ・最大10枚までアップロードできます。
-    .upform__picture__upload
-      %p ドラッグアンドドロップ
-      %p またはクリックしてファイルをアップロード
   = form_with model: @item, local: true, method: "POST" do |f|
+    .upform__picture
+      .upform__picture__title 出品画像
+      .upform__picture__mark 必須
+      .upform__picture__text ・最大10枚までアップロードできます。
+      .upform__picture__upload
+        = f.fields_for :images do |fi|
+          .nest-form
+            .nest-form__head
+              %p ドラッグアンドドロップ
+              %p またはクリックしてファイルをアップロード
+            =fi.file_field :image, type: "file"
+        
     .upform__itemname
       .upform__itemname__title 商品名
       .upform__itemname__mark 必須
@@ -43,7 +48,7 @@
       .upform__delivery__secondtitle 発送元の地域
       .upform__delivery__secondmark 必須
       .upform__delivery__area
-        = f.text_field :region, class: "input_itemRegion", placeholder: "選択して下さい" #地域ができたら変更
+        = f.text_field :prefecture_id, class: "input_itemRegion", placeholder: "選択して下さい" #地域ができたら変更
       .upform__delivery__thirdtitle 発送までの日数
       .upform__delivery__thirdmark 必須
       .upform__delivery__days
