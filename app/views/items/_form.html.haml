@@ -6,12 +6,14 @@
       .upform__picture__text ・最大10枚までアップロードできます。
       .upform__picture__upload
         = f.fields_for :images do |fi|
-          .nest-form
-            .nest-form__head
+          =fi.label :image, class: 'nest-form__picture' do
+            = icon('fas', 'camera', class: 'upform__picture__upload__icon')
+            .nest-form
               %p ドラッグアンドドロップ
               %p またはクリックしてファイルをアップロード
-            =fi.file_field :image, type: "file"
-        
+              = icon('fas', 'camera', class: 'icon')
+              =fi.file_field :image, type: "file", class: 'hidden'
+
     .upform__itemname
       .upform__itemname__title 商品名
       .upform__itemname__mark 必須

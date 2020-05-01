@@ -29,22 +29,36 @@
     }
     &__upload {
       width: 100%;
+      position: relative;
+      &__icon {
+        width: 100%;
+        height: 130px;
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+      }
 
       .nest-form {
         width: 100%;
         height: 130px;
-        padding-top: 30px;
         background: lightgray;
         border: 1px dotted;
         cursor: pointer;
-
-        &__head {
+        padding-top: 30px;
+        
+        p {
           text-align: center;
+          font-size: 14px;
+          cursor: pointer;
+        }
 
-          p {
-            display: block;
-            font-size: 14px;
-          }
+        .icon {
+          cursor: pointer;
+          margin-left: 320px;
+        }
+
+        .hidden {
+          display: none;
         }
       }
 
