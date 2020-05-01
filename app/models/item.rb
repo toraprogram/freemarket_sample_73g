@@ -9,6 +9,18 @@ class Item < ApplicationRecord
   belongs_to :category, optional: true
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
+  # カテゴリidは機能ができたらoptionalを外す
 
-  # カテゴリidとブランドidは機能ができたらoptionalを外す
+  validates :seller_id, presence: true
+  validates :name, presence: true, length: { in: 1..40 }
+  validates :price, presence: true, numericality: { only_integer: true }, inclusion: { in: 300..9999999 }
+  # validates :category_id, presence: true カテゴリができたら設定
+  validates :description, presence: true
+  validates :condition, presence: true
+  validates :delivery_charge, presence: true
+  validates :delivery_day, presence: true
+  validates :prefecture_id, presence: true
+  validates :size, presence: true
+  validates :state, presence: true, inclusion: { in: [true, false] }
+  validates_associated :images
 end
