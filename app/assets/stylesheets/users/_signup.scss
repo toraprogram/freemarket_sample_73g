@@ -71,6 +71,22 @@
             }
           }
         }
+        &__form200{
+          display: flex;
+          &__h200{
+            &__must{
+              height: 22px;
+              width: 35px;
+              color: black;
+              background-color: yellow;
+              margin-top: 20px;
+              font-size: 12px;
+              margin-left: 8px;
+              border-radius: 2px;
+              padding: 2px 4px;
+            }
+          }
+        }
         &__form4{
           &__h4{
             &__next{
@@ -237,6 +253,7 @@
       &__form{
         display: flex;
         justify-content: center;
+        margin-bottom: 20px;
         input{
           height: 50px;
           width: 350px;

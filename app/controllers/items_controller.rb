@@ -12,6 +12,7 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @item.images.build
     @category_parent_array = Category.where(ancestry: nil)
   end
 
@@ -33,15 +34,18 @@ class ItemsController < ApplicationController
         render :new
       end
   end
+
   
   def show
+
   end
+
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :category_id, :category_parent_id, :brand_id, :prefecture_id).merge(seller_id: 1, state: true)
-    # .merge(seller_id: current_user.id)ユーザーデータできたら修正する
+    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: 1, state: true)
+    # .merge(seller_id: current_user.id)ユーザーデータできたら修正する, imageできたら追加する
   end
 
 end
