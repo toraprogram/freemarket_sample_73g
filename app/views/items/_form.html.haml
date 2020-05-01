@@ -64,7 +64,7 @@
       - if @item.errors.include?(:prefecture_id)
         %p.upform_error 選択して下さい
       .upform__delivery__area
-        = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}
       .upform__delivery__thirdtitle 発送までの日数
       .upform__delivery__thirdmark 必須
       - if @item.errors.include?(:delivery_day)

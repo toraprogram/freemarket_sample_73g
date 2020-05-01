@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    form_error_check(@item)
     if @item.save
       redirect_to root_path
     else
@@ -34,10 +33,4 @@ class ItemsController < ApplicationController
     # .merge(seller_id: current_user.id)ユーザーデータできたら修正する, imageできたら追加する
   end
 
-  def form_error_check(item)
-    if item[:prefecture_id] == 0
-      item[:prefecture_id] = nil
-    end
-
-  end
 end
