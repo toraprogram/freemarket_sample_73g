@@ -25,7 +25,7 @@
       .upform__itemdate__title カテゴリー
       .upform__itemdate__mark 必須
       .upform__itemdate__category
-        %input{placeholder: "選択してください"}
+        = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt:"選択して下さい"}, {class: 'upform__itemdate__category--select'}
       .upform__itemdate__secondtitle ブランド
       .upform__itemdate__secondmark 必須
       .upform__itemdate__brandname
@@ -43,7 +43,7 @@
       .upform__delivery__secondtitle 発送元の地域
       .upform__delivery__secondmark 必須
       .upform__delivery__area
-        = f.text_field :region, class: "input_itemRegion", placeholder: "選択して下さい" #地域ができたら変更
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: "input_itemRegion"}#地域ができたら変更
       .upform__delivery__thirdtitle 発送までの日数
       .upform__delivery__thirdmark 必須
       .upform__delivery__days
