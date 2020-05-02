@@ -182,11 +182,12 @@
     &__category {
       margin-top: 68px;
       margin-bottom: 30px;
-        input {
-          padding-left: 20px;
-          width: 650px;
-          height: 36px;
-        }
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
     }
     &__secondtitle {
       font-size: 16px;
