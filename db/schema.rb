@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_015737) do
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.string "postal_code", null: false
-    t.integer "prefecture_id", null: false
+    t.string "prefecture", null: false
     t.string "city", null: false
     t.string "block"
     t.string "building"
@@ -49,10 +49,12 @@ ActiveRecord::Schema.define(version: 2020_05_01_015737) do
   end
 
   create_table "category_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id"
     t.bigint "brand_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_category_brands_on_brand_id"
+    t.index ["category_id"], name: "index_category_brands_on_category_id"
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,7 +69,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_015737) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
-    t.bigint "item_id", null: false
+    t.bigint "item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_images_on_item_id"
@@ -147,6 +149,7 @@ ActiveRecord::Schema.define(version: 2020_05_01_015737) do
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "category_brands", "brands"
+  add_foreign_key "category_brands", "categories"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"
