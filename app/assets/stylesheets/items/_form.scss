@@ -1,7 +1,13 @@
 .upform {
   margin: 0 auto;
-  height: 2400px;
   width: 740px;
+  .upform_error{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 120px;
+    float: right;
+  }
   &__picture {
     padding: 40px;
     margin-top: 5px;
@@ -24,19 +30,47 @@
     }
     &__text {
       font-size: 16px;
-      margin-top: 50px;
+      margin-top: 40px;
+      margin-bottom: 20px;
     }
     &__upload {
-      margin: 20px 0;
-      border: dotted 2px;
-      text-align: center;
-      padding-top: 70px;
-      padding-bottom: 40px;
-      background-color: lightgrey;
-      font-size: 13px;
+      width: 100%;
+      position: relative;
+      &__icon {
+        width: 100%;
+        height: 130px;
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+      }
+
+      .nest-form {
+        width: 100%;
+        height: 130px;
+        background: lightgray;
+        border: 1px dotted;
+        cursor: pointer;
+        padding-top: 30px;
+        
+        p {
+          text-align: center;
+          font-size: 14px;
+          cursor: pointer;
+        }
+
+        .icon {
+          cursor: pointer;
+          margin-left: 320px;
+        }
+
+        .hidden {
+          display: none;
+        }
+      }
+
     }
   }
-
+ 
   &__itemname {
     padding: 40px;
     margin-top: 5px;
@@ -148,11 +182,12 @@
     &__category {
       margin-top: 68px;
       margin-bottom: 30px;
-        input {
-          padding-left: 20px;
-          width: 650px;
-          height: 36px;
-        }
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
     }
     &__secondtitle {
       font-size: 16px;
@@ -162,11 +197,8 @@
     &__secondmark {
       font-size: 16px;
       font-weight: bold;
-      background-color: yellow;
+      color: gray;
       width: 45px;
-      text-align: center;
-      border: solid 1px;
-      border-radius: 10px;
       margin-left: 10px;
       float: left;
     }
@@ -260,10 +292,11 @@
     &__area {
       margin-top: 70px;
       margin-bottom: 30px;
-      input {
-        padding-left: 20px;
+      select{
         width: 650px;
         height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
       }
     }
     &__thirdtitle {
@@ -303,6 +336,12 @@
       font-size: 16px;
       color: gray;
       margin-bottom: 30px;
+    }
+    .upform_error_price{
+      color: red;
+      font-weight: bold;
+      font-size: 15px;
+      float: right;
     }
     &__title {
       font-size: 16px;
@@ -373,7 +412,7 @@
     display: flex;
     justify-content: center;
     &__button {
-      input {
+      button {
         display: block;
         font-size: 25px;
         color: black;
@@ -386,7 +425,7 @@
         border: 1px solid #3CCACE;;
         text-decoration: none;
       }
-      input:hover{
+      button:hover{
         cursor: pointer;
         opacity: 0.6;
       }
