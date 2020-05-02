@@ -20,13 +20,12 @@
       &_btn{
         text-align: center;
         margin-top: 50px;
-        .logout__contents_logout-btn{
-          padding: 10px 100px;
-          text-align: center;
-          margin: 0 auto;
-          border-radius: 10px;
-          background-color: $maincolor;
-        }
+        padding: 10px 100px;
+        text-align: center;
+        margin: 0 auto;
+        border-radius: 10px;
+        background-color: $maincolor;
+        width: 300px;
       }
     }
   }
