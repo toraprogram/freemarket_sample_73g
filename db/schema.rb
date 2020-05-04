@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_070853) do
+ActiveRecord::Schema.define(version: 2020_05_04_061047) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -67,10 +67,10 @@ ActiveRecord::Schema.define(version: 2020_05_04_070853) do
 
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image", null: false
-    t.bigint "item_id", null: false
+    t.bigint "item", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_images_on_item_id"
+    t.index ["item"], name: "index_images_on_item"
   end
 
   create_table "item_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -149,7 +149,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_070853) do
   add_foreign_key "category_brands", "brands"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
-  add_foreign_key "images", "items"
+  add_foreign_key "images", "items", column: "item"
   add_foreign_key "items", "brands", column: "brand"
   add_foreign_key "items", "categories"
   add_foreign_key "likes", "items"
