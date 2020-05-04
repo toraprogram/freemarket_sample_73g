@@ -6,15 +6,14 @@ class Item < ApplicationRecord
   has_many :images, dependent: :destroy
   belongs_to :buyer, class_name: "User", optional: true
   belongs_to :seller, class_name: "User", optional: true
-  belongs_to :category
+  belongs_to :category, optional: true
   belongs_to :brand, optional: true
   accepts_nested_attributes_for :images, allow_destroy: true
-  # カテゴリidは機能ができたらoptionalを外す
 
   validates :seller_id, presence: true
   validates :name, presence: true, length: { in: 1..40 }
   validates :price, presence: true, numericality: { only_integer: true }, inclusion: { in: 300..9999999 }
-  # validates :category_id, presence: true カテゴリができたら設定
+  # validates :category_id, presence: true カテゴリが出来たら入れる
   validates :description, presence: true
   validates :condition, presence: true
   validates :delivery_charge, presence: true
