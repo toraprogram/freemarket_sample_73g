@@ -10,6 +10,7 @@
       .middle__text__down
         .middle__text__down__input
           
+
           .middle__text__down__input__form1
             %p.middle__text__down__input__form1__h1
               ニックネーム
@@ -17,6 +18,8 @@
                 必須
           .middle__text__down__input__form986
             = f.text_field :nickname, placeholder: "例）フリマ太郎"
+          - if @user.errors.include?(:nickname)
+            %b 入力してください
 
           .middle__text__down__input__form2
             %p.middle__text__down__input__form2__h2
@@ -25,6 +28,8 @@
                 必須
           .middle__text__down__input__form987
             = f.email_field :email, placeholder: "メールアドレス"
+          - if @user.errors.include?(:email)
+            %b 入力してください
 
           .middle__text__down__input__form3
             %p.middle__text__down__input__form3__h3
@@ -33,9 +38,8 @@
                 必須
           .middle__text__down__input__form988
             = f.password_field :password, autocomplete: "off", placeholder: "英数字7文字以上"
-          - if @minimum_password_length
-            %em
-              (7文字以上)
+          - if @user.errors.include?(:password)
+            %b 入力してください
 
           .middle__text__down__input__form200
             %p.middle__text__down__input__form200__h200
@@ -44,7 +48,8 @@
                 必須
           .middle__text__down__input__form989
             = f.password_field :password_confirmation, autocomplete: "off", placeholder: "上記と同じ"
-
+          - if @user.errors.include?(:password_confirmation)
+            %b 入力してください
 
           .middle__text__down__input__form4
             %p.middle__text__down__input__form4__h4
@@ -62,6 +67,8 @@
               = f.text_field :family_name, placeholder: "例）山田"
             .middle__text__down__input__form991
               = f.text_field :first_name, placeholder: "例）綾"
+          - if @user.errors.include?(:family_name)
+            %b 入力してください
 
           .middle__text__down__input__form6
             %p.middle__text__down__input__form6__h6
@@ -73,6 +80,8 @@
               = f.text_field :family_name_kana, placeholder: "例）ヤマダ"
             .middle__text__down__input__form993
               = f.text_field :first_name_kana, placeholder: "例）アヤ"
+          - if @user.errors.include?(:first_name)
+            %b 入力してください
           
           .middle__text__down__input__form7
             %p.middle__text__down__input__form7__h7
@@ -81,6 +90,8 @@
                 必須
           .middle__text__down__input__form994
             = f.text_field :birthday, placeholder: "20201231"
+          - if @user.errors.include?(:birthday)
+            %b 入力してください
 
           .middle__text__down__input__form99
             %p.middle__text__down__input__form99__h99
@@ -89,46 +100,57 @@
                 必須
           .middle__text__down__input__form995
             = f.text_field :phone_authy, placeholder: "09012345678"
+            - if @user.errors.include?(:phone_authy)
+              %b 入力してください
 
-          .middle__text__down__input__form100
-            %p.middle__text__down__input__form100__h100
-              郵便番号
-              .middle__text__down__input__form100__h100__must
-                必須
-          .middle__text__down__input__form996
-            = f.text_field :address, placeholder: "0123456"
 
-          .middle__text__down__input__form101
-            %p.middle__text__down__input__form101__h101
-              都道府県
-              .middle__text__down__input__form101__h101__must
-                必須
-          .middle__text__down__input__form997
-            = f.text_field :address
+          = f.fields_for :address,Address.new do |a|
+            .middle__text__down__input__form100
+              %p.middle__text__down__input__form100__h100
+                郵便番号
+                .middle__text__down__input__form100__h100__must
+                  必須
+            .middle__text__down__input__form996
+              = a.text_field :postal_code, placeholder: "0123456"
+            - if @user.errors.include?(:nickname)
+              %b 入力してください
 
-          .middle__text__down__input__form102
-            %p.middle__text__down__input__form102__h102
-              市町村
-              .middle__text__down__input__form102__h102__must
-                必須
-          .middle__text__down__input__form998
-            = f.text_field :address
+            .middle__text__down__input__form101
+              %p.middle__text__down__input__form101__h101
+                都道府県
+                .middle__text__down__input__form101__h101__must
+                  必須
+            .middle__text__down__input__form997
+              = a.collection_select :prefecture_id, Prefecture.all, :id, :name
+            - if @user.errors.include?(:nickname)
+              %b 入力してください
 
-          .middle__text__down__input__form103
-            %p.middle__text__down__input__form103__h103
-              番地
-              .middle__text__down__input__form103__h103__must
-                必須
-          .middle__text__down__input__form999
-            = f.text_field :address
+            .middle__text__down__input__form102
+              %p.middle__text__down__input__form102__h102
+                市町村
+                .middle__text__down__input__form102__h102__must
+                  必須
+            .middle__text__down__input__form998
+              = a.text_field :city
+            - if @user.errors.include?(:nickname)
+              %b 入力してください
 
-            .middle__text__down__input__form7__next
-              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
-          
-          %p.middle__text__down__input__form8__h8
-            「登録」のボタンを押すことにより、利用規約に同意したものとみなします
-    
-          .middle__text__down__form
-            = f.submit "登録"
+            .middle__text__down__input__form103
+              %p.middle__text__down__input__form103__h103
+                番地
+                .middle__text__down__input__form103__h103__must
+                  必須
+            .middle__text__down__input__form999
+              = a.text_field :block
+            - if @user.errors.include?(:nickname)
+              %b 入力してください
 
+              .middle__text__down__input__form7__next
+                ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+            
+            %p.middle__text__down__input__form8__h8
+              「登録」のボタンを押すことにより、利用規約に同意したものとみなします
+      
+            .middle__text__down__form
+              = f.submit "登録"
   = render "items/footer"

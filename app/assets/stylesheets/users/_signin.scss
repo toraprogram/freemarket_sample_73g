@@ -27,10 +27,12 @@
       &__title {
       }
       &__box {
+        a {
+          color: white;
+        }
         cursor: pointer;
         font-size: 12px;
         line-height: 40px;
-        color: white;
         height: 40px;
         width: 350px;
         background-color: skyblue;
@@ -110,18 +112,13 @@
           margin-top: 20px;
           background-color: #f8f8f8;
           display: flex;
-          button {
-            height: 30px;
-            width: 30px;
-            border-radius: 3px;
-            margin-top: 25px;
-            margin-left: 18px;
+          input {
+            margin-top: 30px;
+            width: 50px;
           }
-          button:active {
-            background-color: #3CCACE;
-            
+          label {
+            padding-top: 30px;
           }
-          button:hover action {}
           &__comment {
             padding: 20px 0;
             font-size: 14px;

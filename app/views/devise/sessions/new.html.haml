@@ -3,7 +3,9 @@
   .top__middle
     .top__middle__new
       .top__middle__new__title アカウントをお持ちでない方はこちら
-      .top__middle__new__box 新規会員登録
+      .top__middle__new__box 
+        = link_to "新規会員登録", new_user_registration_path
+
     .top__middle__inner
       .top__middle__inner__box
         .top__middle__inner__box__top 
@@ -16,16 +18,18 @@
       %h2.top__middle__center__main 
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
         .top__middle__center__main__mail
+          = f.label :email
+          %br/
           = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス"
         .top__middle__center__main__pass
+          = f.label :password
           %br/
           = f.password_field :password, autocomplete: "current-password", placeholder: "パスワード"
+        - if devise_mapping.rememberable?
         .top__middle__center__main__lock
-          %button.top__middle__center__main__lock__button
-          .top__middle__center__main__lock__comment 
-            私はロボットではあり
-            %br
-            ません
+          = f.check_box :remember_me
+          = f.label :no_Robot
+            .top__middle__center__main__lock__comment
           .top__middle__center__main__lock__small プライバシー-利用規約
         .top__middle__center__main__login
           = f.submit "ログイン"
