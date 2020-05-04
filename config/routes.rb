@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'items#index'
   resources :items do
+    get '/buycheck', controller: 'items', action: 'buycheck'
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'category' 

@@ -33,7 +33,9 @@
           .itemBox__body
             %ul.item-image
               %li.main-image
-                = image_tag "pict/curry.png"
+                // 商品にidがついたらリンクを変更
+                = link_to '/items/1/buycheck', class:"main-image__link", method: :get do
+                  = image_tag "pict/curry.png" 
               %ul.sub-image 
                 %li.sub-image__1
                   = image_tag "pict/currymini.png"

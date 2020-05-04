@@ -37,7 +37,12 @@ class ItemsController < ApplicationController
 
   
   def show
+    # @item = Item.find(params[:id]) アイテム詳細にidがついたら設定
+    
+  end
 
+  def buycheck
+    render 'items/buycheck'
   end
 
 
