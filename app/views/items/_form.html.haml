@@ -43,7 +43,8 @@
       - if @item.errors.include?(:category_id)
         %p.upform_error 選択して下さい
       .upform__itemdate__category
-        = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt:"選択して下さい"}, {class: 'upform__itemdate__category--select'}
+        = f.text_field :category_id, class: "input_itemCategory", placeholder: "必須外し中"
+        -# = f.collection_select :category_id, Category.all.limit(13), :id, :name, {prompt:"選択して下さい"}, {class: 'upform__itemdate__category--select'}
       .upform__itemdate__secondtitle ブランド
       .upform__itemdate__secondmark 任意
       .upform__itemdate__brandname
@@ -67,7 +68,7 @@
       - if @item.errors.include?(:prefecture_id)
         %p.upform_error 選択して下さい
       .upform__delivery__area
-        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: "input_itemRegion"}#地域ができたら変更
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "&nbsp;&nbsp;選択して下さい".html_safe}, {class: "input_itemRegion"}#地域ができたら変更
       .upform__delivery__thirdtitle 発送までの日数
       .upform__delivery__thirdmark 必須
       - if @item.errors.include?(:delivery_day)
