@@ -27,7 +27,7 @@
               .middle__text__down__input__form2__h2__must
                 必須
           .middle__text__down__input__form987
-            = f.email_field :email, placeholder: "メールアドレス"
+            = f.email_field :email, placeholder: "携帯・PCでも可"
           - if @user.errors.include?(:email)
             %b 入力してください
 
@@ -37,7 +37,7 @@
               .middle__text__down__input__form3__h3__must
                 必須
           .middle__text__down__input__form988
-            = f.password_field :password, autocomplete: "off", placeholder: "8文字以上"
+            = f.password_field :password, autocomplete: "off", placeholder: "7文字以上 半角英数字"
           - if @user.errors.include?(:password)
             %b 入力してください
 
@@ -89,7 +89,7 @@
               .middle__text__down__input__form7__h7__must
                 必須
           .middle__text__down__input__form994
-            = f.text_field :birthday, placeholder: "20201231"
+            = f.date_select :birthday, use_month_numbers: true,start_year: 1930
           - if @user.errors.include?(:birthday)
             %b 入力してください
 
@@ -112,7 +112,7 @@
                   必須
             .middle__text__down__input__form996
               = a.text_field :postal_code, placeholder: "012-3456"
-            - if @address.errors.include?(:postal_code)
+            - if @user.errors.include?(:"address.postal_code")
               %b 入力してください
 
             .middle__text__down__input__form101
@@ -121,8 +121,8 @@
                 .middle__text__down__input__form101__h101__must
                   必須
             .middle__text__down__input__form997
-              = a.collection_select :prefecture_id, Prefecture.all, :id, :name
-            - if @user.errors.include?(:nickname)
+              = a.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "&nbsp;&nbsp;選択して下さい".html_safe}
+            - if @user.errors.include?(:"address.prefecture_id")
               %b 入力してください
 
             .middle__text__down__input__form102
@@ -131,8 +131,8 @@
                 .middle__text__down__input__form102__h102__must
                   必須
             .middle__text__down__input__form998
-              = a.text_field :city
-            - if @user.errors.include?(:nickname)
+              = a.text_field :city, placeholder: ""
+            - if @user.errors.include?(:"address.city")
               %b 入力してください
 
             .middle__text__down__input__form103
@@ -142,7 +142,7 @@
                   必須
             .middle__text__down__input__form999
               = a.text_field :block
-            - if @user.errors.include?(:nickname)
+            - if @user.errors.include?(:"address.block")
               %b 入力してください
 
               .middle__text__down__input__form7__next

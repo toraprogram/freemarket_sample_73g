@@ -38,17 +38,17 @@ $form_color: #dcdcdc;
       &__box {
         display: flex;
         &__logo {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/google_play@2x.png');
         }
@@ -207,17 +207,17 @@ $form_color: #dcdcdc;
         padding-top: 30px;
 
         &__logo {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/google_play@2x.png');
         }
@@ -226,7 +226,6 @@ $form_color: #dcdcdc;
   }
   &__section3 {
     height: 740px;
-    // width: 1440px;
     padding: 60px 100px;
     &__middle {
       text-align: center;
