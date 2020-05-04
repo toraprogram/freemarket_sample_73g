@@ -37,7 +37,7 @@
               .middle__text__down__input__form3__h3__must
                 必須
           .middle__text__down__input__form988
-            = f.password_field :password, autocomplete: "off", placeholder: "英数字7文字以上"
+            = f.password_field :password, autocomplete: "off", placeholder: "8文字以上"
           - if @user.errors.include?(:password)
             %b 入力してください
 
@@ -111,8 +111,8 @@
                 .middle__text__down__input__form100__h100__must
                   必須
             .middle__text__down__input__form996
-              = a.text_field :postal_code, placeholder: "0123456"
-            - if @user.errors.include?(:nickname)
+              = a.text_field :postal_code, placeholder: "012-3456"
+            - if @address.errors.include?(:postal_code)
               %b 入力してください
 
             .middle__text__down__input__form101
