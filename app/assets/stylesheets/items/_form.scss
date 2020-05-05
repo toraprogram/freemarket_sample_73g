@@ -33,41 +33,60 @@
       margin-top: 40px;
       margin-bottom: 20px;
     }
-    &__upload {
+    
+    .item-num-0{
       width: 100%;
+      height: 40px;
+      background: lightgray;
+      border: 1px dotted;
+      cursor: pointer;
       position: relative;
-      &__icon {
-        width: 100%;
-        height: 130px;
-        cursor: pointer;
-        opacity: 0;
-        position: absolute;
-      }
-
-      .nest-form {
-        width: 100%;
-        height: 130px;
-        background: lightgray;
-        border: 1px dotted;
-        cursor: pointer;
-        padding-top: 30px;
-        
-        p {
-          text-align: center;
-          font-size: 14px;
-          cursor: pointer;
-        }
-
-        .icon {
-          cursor: pointer;
-          margin-left: 320px;
-        }
-
-        .hidden {
-          display: none;
-        }
-      }
-
+    }
+    .item-num-1{
+      width: 491px;
+      height: 40px;
+      background: lightgray;
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-2{
+      width: 363px;
+      height: 40px;
+      background: lightgray;
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-3{
+      width: 234px;
+      height: 40px;
+      background: lightgray;
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-4{
+      width: 106px;
+      height: 40px;
+      background: lightgray;
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    
+    .icon {
+      position: absolute;
+      top: 10px;
+      left: 25px;
+      cursor: pointer;
+    }
+    .fas.fa-image {
+      width: 100%;
+      height: 40px;
+      cursor: pointer;
+      opacity: 0;
     }
   }
  
