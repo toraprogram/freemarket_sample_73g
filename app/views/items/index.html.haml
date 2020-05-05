@@ -84,59 +84,48 @@
         .main__section4__box__main
           .main__section4__box__main__sub 新規投稿商品
           .main__section4__box__main__product
-            - count = 0
-            - @items.each do |item|
-              - if count < 3
-                - count += 1
-                = link_to "#" do
-                  .main__section4__box__main__product__lists1
-                    -if item.buyer_id.present? 
-                      .items-box_photo__sold
-                        .items-box_photo__sold__inner
-                          SOLD
-                    .main__section4__box__main__product__lists1__image
-                      = image_tag "#{item.images.first.image}"
-                      .main__section4__box__main__product__lists1__list
-                        .main__section4__box__main__product__lists1__list__text
-                          = item.name
-                        .main__section4__box__main__product__lists1__list__text1 
-                          .main__section4__box__main__product__lists1__list__text1__left
-                            = item.price
-                            円
-                          .main__section4__box__main__product__lists1__list__text1__right ★ 0
-                        .main__section4__box__main__product__lists1__list__text2 (税込み)
-              - else            
-                - break
+            - @items.first(3).each do |item|
+              = link_to "#" do
+                .main__section4__box__main__product__lists1
+                  -if item.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
+                  .main__section4__box__main__product__lists1__image
+                    = image_tag "#{item.images.first.image}"
+                    .main__section4__box__main__product__lists1__list
+                      .main__section4__box__main__product__lists1__list__text
+                        = item.name
+                      .main__section4__box__main__product__lists1__list__text1 
+                        .main__section4__box__main__product__lists1__list__text1__left
+                          = item.price
+                          円
+                        .main__section4__box__main__product__lists1__list__text1__right ★ 0
+                      .main__section4__box__main__product__lists1__list__text2 (税込み)
       .main__section4__box1
         %h2.main__section4__box1__title ピックアップブランド
         .main__section4__box1__main
           .main__section4__box1__main__sub アーカイバ
           .main__section4__box1__main__product
-
-            - count = 0
-            - @items.each do |item|
-              - if count < 3
-                - count += 1
-                = link_to "#" do
-                  .main__section4__box__main__product__lists1
-                    -if item.buyer_id.present? 
-                      .items-box_photo__sold
-                        .items-box_photo__sold__inner
-                          SOLD
-                    .main__section4__box__main__product__lists1__image 
-                      = image_tag "#{item.images.first.image}"
-                      .main__section4__box__main__product__lists1__list
-                        .main__section4__box__main__product__lists1__list__text
-                          = item.name
-                        .main__section4__box__main__product__lists1__list__text1 
-                          .main__section4__box__main__product__lists1__list__text1__left
-                            = item.price
-                            円
+            - @items.first(3).each do |item|
+              = link_to "#" do
+                .main__section4__box__main__product__lists1
+                  -if item.buyer_id.present? 
+                    .items-box_photo__sold
+                      .items-box_photo__sold__inner
+                        SOLD
+                  .main__section4__box__main__product__lists1__image 
+                    = image_tag "#{item.images.first.image}"
+                    .main__section4__box__main__product__lists1__list
+                      .main__section4__box__main__product__lists1__list__text
+                        = item.name
+                      .main__section4__box__main__product__lists1__list__text1 
+                        .main__section4__box__main__product__lists1__list__text1__left
+                          = item.price
+                          円
                           .main__section4__box__main__product__lists1__list__text1__right ★ 0
                         .main__section4__box__main__product__lists1__list__text2 (税込み)
-              - else            
-                - break
-                      
+
     .main__section5
       .main__section5__center
       %h1.main__section5__center__h1 だれでもかんたん、人生を変えるフリマアプリ
