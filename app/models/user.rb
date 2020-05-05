@@ -14,13 +14,13 @@ class User < ApplicationRecord
   has_many :orders
 
   validates :nickname, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true, length: { minimum: 8}
-  validates :password_confirmation, presence: true, length: { minimum: 8}
-  validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は全角で入力してください'}, presence: true
-  validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は全角で入力してください'}, presence: true
-  validates :family_name_kana, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は全角で入力してください'}, presence: true
-  validates :first_name_kana, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'は全角で入力してください'}, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i }
+  validates :password, presence: true, length: { minimum: 7}
+  validates :password_confirmation, presence: true, length: { minimum: 7}
+  validates :family_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}, presence: true
+  validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}, presence: true
+  validates :family_name_kana, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}, presence: true
+  validates :first_name_kana, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/}, presence: true
   validates :birthday, presence: true
-  validates :phone_authy, presence: true, length: { is: 11}
+  validates :phone_authy, presence: true, length: { is: 11}, numericality:{only_integer: true}
 end
