@@ -322,6 +322,7 @@ $form_color: #dcdcdc;
             width: 220px;
             height: 250px;
             background: white;
+            margin: 0px 30px 0px 30px;
           &__lists1:hover {
             background-color: #c9c9c9; 
             text-decoration: none; 
@@ -485,6 +486,28 @@ $form_color: #dcdcdc;
           background-image: image-url('pict/google_play@2x.png');
         }
       }
+    }
+  }
+}
+.main__section4__box__main__product__lists1 {
+  position: relative;
+  .items-box_photo__sold{
+    width: 0;
+    height: 0;
+    border-top: 40px solid $maincolor;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid $maincolor ;
+    z-index:100;
+    position: absolute;
+    top:0px;
+    &__inner{
+      transform: rotate(-45deg);
+      font-size: 18px;
+      margin:-20px 0px 0px -40px;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 600;
     }
   }
 }
