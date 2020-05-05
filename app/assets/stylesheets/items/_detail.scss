@@ -84,8 +84,56 @@
       font-weight: bold;
       margin: 0 10px 0 0;
     }
-    &__price-detail {
+    &-detail {
       font-size: 16px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+    background-color: #fff;
+    &__edit {
+      width: 100px;
+      height: 55px;
+      background: #3CCAEC;
+      cursor: pointer;
+      display: flex;
+      margin-right: 10px;
+      a {
+        padding-left: 20px;
+        text-align: center;
+        line-height: 55px;
+        color: white;
+      }
+    }
+    &__destroy {
+      width: 100px;
+      height: 55px;
+      background: #3CCAEC;
+      cursor: pointer;
+      // text-align: center;
+      a {
+        line-height: 55px;
+        color: white;
+      }
+    }
+  }
+  &__button {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 560px;
+    height: 55px;
+    background: #3CCAEC;
+    cursor: pointer;
+    text-align: center;
+    a {
+      line-height: 55px;
+      color: white;
+    }
+    &__text {
     }
   }
   .itemDetail {
