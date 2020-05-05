@@ -29,75 +29,129 @@
       .topcontent
         .itemBox
           %h2.itemBox__name
-            Product1
+            = @item.name
           .itemBox__body
             %ul.item-image
               %li.main-image
                 // 商品にidがついたらリンクを変更
-                = link_to '/items/1/buycheck', class:"main-image__link", method: :get do
-                  = image_tag "pict/curry.png" 
+                = image_tag "#{@item.images.first.image}" 
               %ul.sub-image 
                 %li.sub-image__1
-                  = image_tag "pict/currymini.png"
+                  -# = @item.image
                 %li.sub-image__2
-                  = image_tag "pict/nasu.png"
+                  -# = @item.image
                 %li.sub-image__3
-                  = image_tag "pict/nabe.png"
-          .itemBox__price
-            %span ¥10000
+                  -# = @item.image
+          .itemBox__price 
+            = @item.price
             .itemBox__price-detail
               %span (税込み)
               %span 送料込み
-          .itemDetail
-            親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の
-            二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をし
-            たと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を
-            出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降
-            りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰
-            って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
-          .table
-            %table
-              %tbody
-                %tr
-                  %th 出品者
-                  %td hoge
-                %tr
-                  %th カテゴリー
-                  %td
-                    = link_to("レディース","#") 
-                    %br
-                    = link_to("トップス","#") 
-                    %br
-                    = link_to("Tシャツ/カットソー(半袖/袖なし)","#") 
-                %tr
-                  %th ブランド
-                  %td 
-                %tr
-                  %th 商品のサイズ
-                  %td
-                %tr
-                  %th 商品の状態
-                  %td 新品/未使用
-                %tr
-                  %th 配送料の負担
-                  %td 送料込み（出品者負担）
-                %tr
-                  %th 発送元地域
-                  %td 
-                    = link_to("青森県","#") 
-                %tr
-                  %th 発送日の目安
-                  %td 1-2日で発送
-          .optionalArea
-            %ul
-              %li#likeBtn.optionalBtn.likeBtn
-                %i.fa.fa-star
-                お気に入り 0
-            %ul.optional
-              %li.optionalBtn
-                = link_to "#" do
-                  %i.fa.fa-flag
-                    不適切な商品の通報
+          - if user_signed_in? && current_user.id 
+            .itemBox__main
+              .itemBox__main__edit
+                = link_to "編集する", "/items/edit"
+              .itemBox__main__destroy
+                = link_to "削除する", "/items/#{@item.id}", method: :delete
+            .itemDetail
+              = @item.description
+            .table
+              %table
+                %tbody
+                  %tr
+                    %th 出品者
+                    %td hide
+                  %tr
+                    %th カテゴリー
+                    %td
+                      = @item.category.root.name
+                  %tr
+                    %th ブランド
+                    %td 
+                      = @item.brand
+                  %tr
+                    %th 商品のサイズ 
+                    %td
+                      = @item.size
+                  %tr
+                    %th 商品の状態
+                    %td 
+                      = @item.condition
+                  %tr
+                    %th 配送料の負担
+                    %td 
+                      = @item.delivery_charge
+                  %tr
+                    %th 発送元地域
+                    %td 
+                      = @item.prefecture.name
+                  %tr
+                    %th 発送日の目安
+                    %td 
+                      = @item.delivery_day
+            .optionalArea
+              %ul
+                %li#likeBtn.optionalBtn.likeBtn
+                  %i.fa.fa-star
+                  お気に入り 0
+              %ul.optional
+                %li.optionalBtn
+                  = link_to "#" do
+                    %i.fa.fa-flag
+                      不適切な商品の通報
+          - else    
+            .itemBox__button
+              = link_to '購入画面へ進む', "/items/1/buycheck",class:"itemBox__button__text"
+            .itemDetail
+              = @item.description
+            .table
+              %table
+                %tbody
+                  %tr
+                    %th 出品者
+                    %td hide
+                  %tr
+                    %th カテゴリー
+                    %td
+                      = @item.category_id
+                      %br
+                      = @item.category_id
+                      %br
+                      = @item.category_id
+                  %tr
+                    %th ブランド
+                    %td 
+                      = @item.brand
+                  %tr
+                    %th 商品のサイズ 
+                    %td
+                      = @item.size
+                  %tr
+                    %th 商品の状態
+                    %td 
+                      = @item.condition
+                  %tr
+                    %th 配送料の負担
+                    %td 
+                      = @item.delivery_charge
+                  %tr
+                    %th 発送元地域
+                    %td 
+                      = @item.prefecture.name
+                  %tr
+                    %th 発送日の目安
+                    %td 
+                      = @item.delivery_day
+            .optionalArea
+              %ul
+                %li#likeBtn.optionalBtn.likeBtn
+                  %i.fa.fa-star
+                  お気に入り 0
+              %ul.optional
+                %li.optionalBtn
+                  = link_to "#" do
+                    %i.fa.fa-flag
+                      不適切な商品の通報
         .commentBox
           %ul.commentContents
           %form.new_comment
