@@ -84,80 +84,67 @@
         .main__section4__box__main
           .main__section4__box__main__sub 新規投稿商品
           .main__section4__box__main__product
-            .main__section4__box__main__product__lists1
-              .main__section4__box__main__product__lists1__image 
-                = link_to image_tag "pict/sakana.png"
-              .main__section4__box__main__product__lists1__list
-                .main__section4__box__main__product__lists1__list__text product3
-                .main__section4__box__main__product__lists1__list__text1 
-                  .main__section4__box__main__product__lists1__list__text1__left 30000円
-                  .main__section4__box__main__product__lists1__list__text1__right ★ 0
-                .main__section4__box__main__product__lists1__list__text2 (税込み)
-                
-            .main__section4__box__main__product__lists2
-              .main__section4__box__main__product__lists2__image
-                = link_to image_tag "pict/gyouza.png"
-              .main__section4__box__main__product__lists2__list
-                .main__section4__box__main__product__lists2__list__text product2
-                .main__section4__box__main__product__lists2__list__text1 
-                  .main__section4__box__main__product__lists2__list__text1__left 20000円
-                  .main__section4__box__main__product__lists2__list__text1__right ★ 0
-                .main__section4__box__main__product__lists2__list__text2 (税込み)
-
-            .main__section4__box__main__product__lists3
-              .main__section4__box__main__product__lists3__image
-                = link_to image_tag "pict/curry.png"
-              .main__section4__box__main__product__lists3__list
-                .main__section4__box__main__product__lists3__list__text product1
-                .main__section4__box__main__product__lists3__list__text1 
-                  .main__section4__box__main__product__lists3__list__text1__left 10000円
-                  .main__section4__box__main__product__lists3__list__text1__right ★ 0
-                .main__section4__box__main__product__lists3__list__text2 (税込み)
-
+            - count = 0
+            - @items.each do |item|
+              - if count < 3
+                - count += 1
+                = link_to "#" do
+                  .main__section4__box__main__product__lists1
+                    -if item.buyer_id.present? 
+                      .items-box_photo__sold
+                        .items-box_photo__sold__inner
+                          SOLD
+                    .main__section4__box__main__product__lists1__image
+                      = image_tag "#{item.images.first.image}"
+                      .main__section4__box__main__product__lists1__list
+                        .main__section4__box__main__product__lists1__list__text
+                          = item.name
+                        .main__section4__box__main__product__lists1__list__text1 
+                          .main__section4__box__main__product__lists1__list__text1__left
+                            = item.price
+                            円
+                          .main__section4__box__main__product__lists1__list__text1__right ★ 0
+                        .main__section4__box__main__product__lists1__list__text2 (税込み)
+              - else            
+                - break
       .main__section4__box1
         %h2.main__section4__box1__title ピックアップブランド
         .main__section4__box1__main
           .main__section4__box1__main__sub アーカイバ
           .main__section4__box1__main__product
-            .main__section4__box__main__product__lists1
-              .main__section4__box__main__product__lists1__image 
-                = link_to image_tag "pict/sakana.png"
-              .main__section4__box__main__product__lists1__list
-                .main__section4__box__main__product__lists1__list__text product3
-                .main__section4__box__main__product__lists1__list__text1 
-                  .main__section4__box__main__product__lists1__list__text1__left 30000円
-                  .main__section4__box__main__product__lists1__list__text1__right ★ 0
-                .main__section4__box__main__product__lists1__list__text2 (税込み)
-                
-            .main__section4__box__main__product__lists2
-              .main__section4__box__main__product__lists2__image
-                = link_to image_tag "pict/gyouza.png"
-              .main__section4__box__main__product__lists2__list
-                .main__section4__box__main__product__lists2__list__text product2
-                .main__section4__box__main__product__lists2__list__text1 
-                  .main__section4__box__main__product__lists2__list__text1__left 20000円
-                  .main__section4__box__main__product__lists2__list__text1__right ★ 0
-                .main__section4__box__main__product__lists2__list__text2 (税込み)
 
-            .main__section4__box__main__product__lists3
-              .main__section4__box__main__product__lists3__image
-                = link_to image_tag "pict/curry.png"
-              .main__section4__box__main__product__lists3__list
-                .main__section4__box__main__product__lists3__list__text product1
-                .main__section4__box__main__product__lists3__list__text1 
-                  .main__section4__box__main__product__lists3__list__text1__left 10000円
-                  .main__section4__box__main__product__lists3__list__text1__right ★ 0
-                .main__section4__box__main__product__lists3__list__text2 (税込み)
-
+            - count = 0
+            - @items.each do |item|
+              - if count < 3
+                - count += 1
+                = link_to "#" do
+                  .main__section4__box__main__product__lists1
+                    -if item.buyer_id.present? 
+                      .items-box_photo__sold
+                        .items-box_photo__sold__inner
+                          SOLD
+                    .main__section4__box__main__product__lists1__image 
+                      = image_tag "#{item.images.first.image}"
+                      .main__section4__box__main__product__lists1__list
+                        .main__section4__box__main__product__lists1__list__text
+                          = item.name
+                        .main__section4__box__main__product__lists1__list__text1 
+                          .main__section4__box__main__product__lists1__list__text1__left
+                            = item.price
+                          .main__section4__box__main__product__lists1__list__text1__right ★ 0
+                        .main__section4__box__main__product__lists1__list__text2 (税込み)
+              - else            
+                - break
+                      
     .main__section5
       .main__section5__center
-        %h1.main__section5__center__h1 だれでもかんたん、人生を変えるフリマアプリ
-        %p.main__section5__center__p1 
-          今すぐ無料ダウンロード
-          .main__section5__center__box
-            .main__section5__center__box__logo
-            .main__section5__center__box__logo1
-            
+      %h1.main__section5__center__h1 だれでもかんたん、人生を変えるフリマアプリ
+      %p.main__section5__center__p1 
+        今すぐ無料ダウンロード
+        .main__section5__center__box
+          .main__section5__center__box__logo
+          .main__section5__center__box__logo1
+                    
   = render "footer"
 
   = render "shuppin"
