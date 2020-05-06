@@ -1,5 +1,7 @@
 .side
   .side__contents
+    - breadcrumb :mypage
+    = breadcrumbs separator: " &rsaquo; "
     %ul.side__contents_menu
       %li 
         = link_to "マイページ", "/users"

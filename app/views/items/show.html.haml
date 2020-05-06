@@ -26,22 +26,19 @@
 .mainshow
   .showMain
     .content
+      - breadcrumb :shower
+      = breadcrumbs separator: " &rsaquo; "
       .topcontent
         .itemBox
           %h2.itemBox__name
             = @item.name
           .itemBox__body
             %ul.item-image
-              %li.main-image
-                // 商品にidがついたらリンクを変更
-                = image_tag "#{@item.images.first.image}" 
+              = image_tag "#{@item.images.first.image}", class:'top-picture', height: '180px', width: '400px'
               %ul.sub-image 
-                %li.sub-image__1
-                  -# = @item.image
-                %li.sub-image__2
-                  -# = @item.image
-                %li.sub-image__3
-                  -# = @item.image
+                - @item.images.each do |item|
+                  %li.main-image
+                    = image_tag "#{item.image}"
           .itemBox__price 
             = @item.price
             .itemBox__price-detail
@@ -50,7 +47,7 @@
           - if user_signed_in? && current_user.id 
             .itemBox__main
               .itemBox__main__edit
-                = link_to "編集する", "/items/edit"
+                = link_to "編集する", "/items/#{@item.id}/edit"
               .itemBox__main__destroy
                 = link_to "削除する", "/items/#{@item.id}", method: :delete
             .itemDetail
@@ -64,7 +61,7 @@
                   %tr
                     %th カテゴリー
                     %td
-                      = @item.category.root.name
+                      = @item.category.name
                   %tr
                     %th ブランド
                     %td 

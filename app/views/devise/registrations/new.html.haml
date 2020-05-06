@@ -1,10 +1,11 @@
 .container
-  = render "items/miniheader"
-  
+  = render "items/miniheader"  
 = form_for(@user, url: registration_path(resource_name)) do |f|
   -# = render "devise/shared/error_messages", resource: resource
   %main.middle
     .middle__text
+      - breadcrumb :newer
+      = breadcrumbs separator: " &rsaquo; "
       .middle__text__up
         会員情報入力
       .middle__text__down

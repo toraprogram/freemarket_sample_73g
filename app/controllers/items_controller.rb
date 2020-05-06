@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-
+  
+  
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
   end
@@ -28,17 +29,18 @@ class ItemsController < ApplicationController
   end
 
   def create
-      @item = Item.new(item_params)
-      if @item.save
-        redirect_to root_path
-      else
-        render :new
-      end
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   
   def show
     @item = Item.find_by(id: params[:id])
+    @items = Item.includes(:images)
   end
 
   def destroy
@@ -50,7 +52,6 @@ class ItemsController < ApplicationController
   def buycheck
     render 'items/buycheck'
   end
-
 
 
   private
