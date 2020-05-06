@@ -8,28 +8,29 @@
       %i.fa.fa-angle-right
     %li.path-list__3
       = link_to "#" do
-        ベビー・キッズ
+        = @item.category.root.name
     %li.path-list__4
       %i.fa.fa-angle-right
     %li.path-list__5
       = link_to "#" do
-        ベビー服(男女兼用)  ~95cm
+        = @item.category.parent.name
     %li.path-list__6
       %i.fa.fa-angle-right
     %li.path-list__7
       = link_to "#" do 
-        アウター
+        = @item.category.name
     %li.path-list__8
       %i.fa.fa-angle-right
     %li.path-list__9
-      %p product1
+      %p 
+        = @item.name
 .mainshow
   .showMain
     .content
       .topcontent
         .itemBox
           %h2.itemBox__name
-            Product1
+            = @item.name
           .itemBox__body
             %ul.item-image
               %li.main-image
@@ -64,11 +65,14 @@
                 %tr
                   %th カテゴリー
                   %td
-                    = link_to("レディース","#") 
+                    = link_to "#" do
+                      = @item.category.root.name
                     %br
-                    = link_to("トップス","#") 
+                    = link_to "#" do
+                      = @item.category.parent.name 
                     %br
-                    = link_to("Tシャツ/カットソー(半袖/袖なし)","#") 
+                    = link_to "#" do
+                      = @item.category.name
                 %tr
                   %th ブランド
                   %td 
