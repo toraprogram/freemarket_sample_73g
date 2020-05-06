@@ -30,7 +30,6 @@ class CardController < ApplicationController
 
   def destroy
     card = Card.find_by(card_id: params[:id])
-    binding.pry
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     customer = Payjp::Customer.retrieve(card.customer_id)
     customer.delete
