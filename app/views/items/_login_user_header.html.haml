@@ -2,7 +2,8 @@
   .login__main
     .login__main__inner
       .login__main__inner__icon
-        = link_to image_tag "logo/logo.png"
+        = link_to root_path do
+          = image_tag "logo/logo.png"
       .login__main__inner__key
         %input{placeholder: "キーワードから探す"}
           .login__main__inner__key__search
@@ -10,8 +11,11 @@
     .login__main__bottom
       .login__main__bottom__left
         %ul.login__main__bottom__left__ul
-          %li.login__main__bottom__left__ul__list カテゴリー
-          %li.login__main__bottom__left__ul__list ブランド
+          %li.login__main__bottom__left__ul__list1
+            = link_to 'カテゴリー', '#', id: 'catBtn'
+            = render  "items/nav-category", parent: @parents
+          %li.login__main__bottom__left__ul__list
+            = link_to 'ブランド', '#', id: 'brandBtn'
       .login__main__bottom__right
         %ul.login__main__bottom__right__ul
           %li.login__main__bottom__right__ul__list 

@@ -1,0 +1,44 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "users/side"
+    .show-card
+      .show-card__contents
+        .show-card__contents_head
+          %p カード情報
+        .show-card__contents_payment
+          .show-card__contents_payment_head
+            %p クレジットカード一覧
+          .show-card__contents_payment_list
+            .card__payment_list
+              .card__payment_list_image
+              .card__payment_list_number
+                = "**** **** ****" + @default_card_information.last4
+              .card__payment_list_data
+                - exp_month = @default_card_information.exp_month.to_s
+                - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              .card__payment_list_delete-btn
+                = form_tag(card_path(id: @default_card_information.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+                  %input{ type: "hidden", name: "card_id", value: "" }
+                  %button 削除する
+          - if @second_card_information.present?
+            .card-sec__payment_list
+              .card-sec__payment_list_image
+              .card-sec__payment_list_number
+                = "**** **** ****" + @second_card_information.last4
+              .card-sec__payment_list_data
+                - exp_month = @second_card_information.exp_month.to_s
+                - exp_year = @second_card_information.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+              .card-sec__payment_list_delete-btn
+                = form_tag(card_path(id: @second_card_information.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+                  %input{ type: "hidden", name: "card_id", value: "" }
+                  %button 削除する
+          .show-card__contents_payment_create
+            - if @second_card_information.blank?
+              = link_to new_card_path, class: "card__create-btn", data: {"turbolinks" => false} do
+                %p 追加する
+            - else
+              %p ※２つまでしか登録できません
+  = render "items/footer"

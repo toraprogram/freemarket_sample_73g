@@ -1,0 +1,12 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "side" 
+    .card
+      .card__contents
+        .card__contents_head
+          %p クレジットカード情報の登録・変更
+        .card__contents_btn
+          = link_to '/card',class: "card__contents_submit" do
+            %p 登録・変更する
+  = render "items/footer"

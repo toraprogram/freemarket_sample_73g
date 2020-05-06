@@ -1,0 +1,65 @@
+.wrapper {
+  .create-card {
+    width: calc(100% - 300px);
+    text-align: center;
+    background-color: $background-color;
+    display: flex;
+    &__contents{
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      margin-top: 50px;
+      background-color: $base-color;
+      &_head{
+        font-size: 25px;
+        padding: 30px;
+        p{
+          border-bottom: 2px solid $maincolor;
+        }
+      }
+      &_form{
+        .create-card__content{
+          &_num{
+            &_title{
+              font-size: 20px;
+              padding-bottom: 10px;
+            }
+            input{
+              padding-left: 10px;
+            }
+          }
+          &_limit{
+            padding: 10px 0 20px 0;
+            &_title{
+              font-size: 20px;
+              padding: 10px 0;
+            }
+          }
+          &_cvc{
+            padding-bottom: 40px;
+            &_title{
+              font-size: 20px;
+              padding-bottom: 10px;
+            }
+            &_form{
+              input{
+                padding-left: 10px;
+              }
+              p{
+                color: gray;
+                font-size: 15px;
+              }
+            }
+          }
+          #token_submit{
+            font-size: 15px;
+            padding: 5px 100px;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: $maincolor;
+          }
+        }
+      }
+    }
+  }
+}

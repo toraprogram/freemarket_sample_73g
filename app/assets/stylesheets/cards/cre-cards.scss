@@ -1,0 +1,113 @@
+.wrapper {
+  .show-card {
+    width: calc(100% - 300px);
+    text-align: center;
+    background-color: $background-color;
+    display: flex;
+    &__contents{
+      width: 80%;
+      height: 80%;
+      margin: 0 auto;
+      margin-top: 50px;
+      background-color: $base-color;
+      &_head{
+        font-size: 25px;
+        padding: 30px;
+        p{
+          border-bottom: 2px solid $maincolor;
+        }
+      }
+      &_payment{
+        &_head{
+          font-size: 20px;
+          padding-bottom: 30px;
+        }
+        &_list{
+          p{
+            color: gray;
+          }
+          .card__payment_list{
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            &_image{
+              padding: 5px;
+            }
+            &_number{
+              line-height: 50px;
+              padding: 5px;
+            }
+            &_data{
+              line-height: 50px;
+              padding: 5px;
+            }
+            &_delete-btn{
+              margin-left: 30px;
+              button{
+                line-height: 30px;
+                font-size: 15px;
+                padding: 0 20px;
+                margin: 10px 0;
+                border: 1px solid black;
+                border-radius: 10px;
+                background-color: yellow;
+              }
+            }
+          }
+        }
+        .card-sec__payment_list{
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          &_image{
+            padding: 5px;
+          }
+          &_number{
+            line-height: 50px;
+            padding: 5px;
+          }
+          &_data{
+            line-height: 50px;
+            padding: 5px;
+          }
+          &_delete-btn{
+            margin-left: 30px;
+            button{
+              line-height: 30px;
+              font-size: 15px;
+              padding: 0 20px;
+              margin: 10px 0;
+              border: 1px solid black;
+              border-radius: 10px;
+              background-color: yellow;
+            }
+          }
+        }
+        &_create{
+          padding-top: 50px;
+          display: flex;
+          justify-content: center;
+          .card__create-btn{
+            font-size: 15px;
+            padding: 5px 100px;
+            margin: 20px 0;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: $maincolor;
+          }
+          a{
+            font-size: 15px;
+            padding: 5px 100px;
+            margin: 20px 0;
+            margin: 0 auto;
+            border-radius: 10px;
+            background-color: $maincolor;
+          }
+        }
+      }
+    }
+  }
+}
+button:hover{
+  cursor: pointer;
+}

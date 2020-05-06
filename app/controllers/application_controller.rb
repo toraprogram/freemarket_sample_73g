@@ -2,6 +2,8 @@ class ApplicationController < ActionController::Base
 
   before_action :basic_auth, if: :production?
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_nav
+
   
   protect_from_forgery with: :null_session
 
@@ -23,4 +25,8 @@ class ApplicationController < ActionController::Base
     Rails.env.production?
   end
   
+  def set_nav
+    @parents = Category.all.order("id ASC").limit(13)
+  end
+
 end

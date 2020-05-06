@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def category
@@ -15,26 +16,28 @@ class ItemsController < ApplicationController
   def new
     @item = Item.new
     @item.images.build
-    @category_parent_array = Category.where(ancestry: nil)
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      @category_parent_array.unshift("選択してください")
   end
   
   def get_category_children
     #選択された親カテゴリーに紐付く子カテゴリーの配列を取得
-    @category_children = Category.find_by(id: params[:parent_id], ancestry: nil).children
+    @category_children = Category.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
   end
 
   def get_category_grandchildren
     #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
-    @category_grandchildren = Category.find(params[:child_id]).children
+    @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
-    end
+      @item = Item.new(item_params)
+      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+      if @item.save
+        redirect_to root_path
+      else
+        render :new
+      end
   end
 
   
