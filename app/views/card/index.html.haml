@@ -1,0 +1,17 @@
+.wrapper
+  = render "items/header"
+  .mainview
+    = render "users/side"
+    .show-card
+      .show-card__contents
+        .show-card__contents_head
+          %p カード情報
+        .show-card__contents_payment
+          .show-card__contents_payment_head
+            %p クレジットカード一覧
+          .show-card__contents_payment_list
+            %p ※クレジットカード情報がありません
+          .show-card__contents_payment_create
+            = link_to new_card_path, class: "card__create-btn", data: {"turbolinks" => false} do
+              %p 追加する
+  = render "items/footer"
