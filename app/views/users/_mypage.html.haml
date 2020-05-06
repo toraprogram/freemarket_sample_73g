@@ -4,12 +4,15 @@
       .main__contents_myinfo_icon
         = icon("fas", "user-circle", class: 'icon')
       .main__contents_myinfo_nickname
-        %p nickname
+        = @user.nickname
       %ul.main__contents_myinfo_info
         %li 評価 0
         %li 出品 0
       .main__contents_myinfo_message
-        %p お知らせメッセージ表示欄
+        - if notice == "Signed in successfully."
+          %p ログインしました！
+        - else
+          = "ようこそ、#{@user.nickname}さん"
     .main__contents_myitems
       %p 購入した商品
       .main__contents_myitems_box
