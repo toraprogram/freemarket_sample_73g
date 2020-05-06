@@ -7,6 +7,11 @@
       width: 300px;
       background-color: $background-color;
       display: flex;
+      position: relative;
+      a{
+        width: 200px;
+        height: 50px;
+      }
       &__contents{
         width: 100%;
         margin: 20px;
@@ -15,6 +20,13 @@
           line-height: 50px;
           font-size: 15px;
           margin: 0 auto;
+          &_syuppin{
+            i{
+              position: absolute;
+              right: 40px;
+              top: 140px;
+            }
+          }
           li{
             border-bottom: 2px solid $background-color;
             padding: 0 20px;

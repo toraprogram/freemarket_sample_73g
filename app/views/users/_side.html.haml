@@ -5,14 +5,12 @@
         = link_to "マイページ", "/users"
         = icon("fas", "chevron-right", class: 'icon')
       %li
-        = link_to "お知らせ", {controller: 'users', action: 'show', name: "notice"}
-        = icon("fas", "chevron-right", class: 'icon')
-      %li
         = link_to "いいね一覧", {controller: 'users', action: 'show', name: "like"}
         = icon("fas", "chevron-right", class: 'icon')
       %li
-        %p 出品する
-        = icon("fas", "chevron-right", class: 'icon')
+        = link_to new_item_path, class: "side__contents_menu_syuppin" do
+          %p 出品する
+          = icon("fas", "chevron-right", class: 'icon')
       %li
         = link_to "出品一覧", {controller: 'users', action: 'show', name: "sellitems"}
         = icon("fas", "chevron-right", class: 'icon')
