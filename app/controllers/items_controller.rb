@@ -39,12 +39,13 @@ class ItemsController < ApplicationController
 
   
   def show
-    @item = Item.find_by(id: params[:id])
+    @item = Item.find(params[:id])
     @items = Item.includes(:images)
+    @user = User.find(@item.seller_id)
   end
 
   def destroy
-    @item = Item.find_by(id: params[:id])
+    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end

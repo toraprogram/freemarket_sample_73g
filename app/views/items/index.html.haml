@@ -85,7 +85,7 @@
           .main__section4__box__main__sub 新規投稿商品
           .main__section4__box__main__product
             - @items.first(3).each do |item|
-              = link_to "/items/#{item.id}/" do
+              = link_to item_path "#{item.id}" do
                 .main__section4__box__main__product__lists1
                   -if item.buyer_id.present? 
                     .items-box_photo__sold
