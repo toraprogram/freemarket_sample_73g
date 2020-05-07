@@ -9,7 +9,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     @address = @user.build_address(address_params)
-    form_error_check(@user)
     @user.save
     sign_in(:user,@user)
   end

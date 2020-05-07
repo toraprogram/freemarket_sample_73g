@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   resources :users, only: :index
   get 'users/:name', controller: 'users', action: 'show'
   get 'users/:name', controller: 'users', action: 'edit'
-  resources :card, only: [:new, :index, :create, :destroy]
+  
+  resources :card, only: [:index, :new, :show, :destroy] do
+    collection do
+      post 'show', to: 'card#show'
+      post 'pay', to: 'card#pay'
+    end
+  end
 
 end

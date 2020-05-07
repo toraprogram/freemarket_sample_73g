@@ -8,9 +8,11 @@
           .nologin__main__inner__key__search
             = link_to image_tag "icon/icon-search 1.png"
     .nologin__main__bottom
-      .nologin__main__bottom__left
-        %ul.nologin__main__bottom__left__ul
-          %li.nologin__main__bottom__left__ul__list カテゴリー
+      .login__main__bottom__left
+        %ul.login__main__bottom__left__ul
+          %li.login__main__bottom__left__ul__list1
+            = link_to 'カテゴリー', '#', id: 'catBtn'
+            = render  "items/nav-category", parent: @parents
           %li.nologin__main__bottom__left__ul__list ブランド
       .nologin__main__bottom__right
         %ul.nologin__main__bottom__right__ul
