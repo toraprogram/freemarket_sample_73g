@@ -27,34 +27,31 @@
 .mainshow
   .showMain
     .content
+      - breadcrumb :shower
+      = breadcrumbs separator: " &rsaquo; "
       .topcontent
         .itemBox
           %h2.itemBox__name
             = @item.name
           .itemBox__body
             %ul.item-image
-              %li.main-image
-                // 商品にidがついたらリンクを変更
-                = image_tag "#{@item.images.first.image}" 
+              = image_tag "#{@item.images.first.image}", class:'top-picture', height: '180px', width: '400px'
               %ul.sub-image 
-                %li.sub-image__1
-                  -# = @item.image
-                %li.sub-image__2
-                  -# = @item.image
-                %li.sub-image__3
-                  -# = @item.image
+                - @item.images.each do |item|
+                  %li.main-image
+                    = image_tag "#{item.image}"
           .itemBox__price 
             = @item.price
             .itemBox__price-detail
               %span (税込み)
               %span 送料込み
-              
-          - if user_signed_in? && current_user.id 
+          - if current_user.id == @item.seller_id
             .itemBox__main
               .itemBox__main__edit
-                = link_to "編集する", "/items/edit"
+                = link_to '編集する', edit_item_path(@item.id)
               .itemBox__main__destroy
-                = link_to "削除する", "/items/#{@item.id}", method: :delete
+                = link_to item_path(@item), method: :delete do
+                  削除する
             .itemDetail
               = @item.description
             .table
@@ -62,18 +59,12 @@
                 %tbody
                   %tr
                     %th 出品者
-                    %td hide
+                    %td 
+                      = @user.nickname
                   %tr
                     %th カテゴリー
                     %td
-                      = link_to "#" do
-                        = @item.category.root.name
-                      %br
-                      = link_to "#" do
-                        = @item.category.parent.name 
-                      %br
-                      = link_to "#" do
-                        = @item.category.name
+                      = @item.category.name
                   %tr
                     %th ブランド
                     %td 

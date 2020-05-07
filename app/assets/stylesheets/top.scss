@@ -2,6 +2,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: "Source Sans Pro", Helvetica, Arial, "游ゴシック体", "YuGothic", "メイリオ", "Meiryo", sans-serif;
+  list-style: none;
 }
 
 $maincolor: #3CCACE;
@@ -471,17 +472,17 @@ $form_color: #dcdcdc;
         padding-top: 30px;
         justify-content: center;
         &__logo {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/bn_app_store.png');
           margin-right: 10px;
         }
         &__logo1 {
-          height: 100px;
-          width: 280px;
-          background-size: cover;
+          height: 53px;
+          width: 180px;
+          background-size: 180px 53px;
           background-position: center;
           background-image: image-url('pict/google_play@2x.png');
         }
