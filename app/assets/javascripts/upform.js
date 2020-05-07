@@ -32,7 +32,22 @@ $(function(){
   });
   $(document).on("click", '.item-image__operetion--delete', function(){
     var target_image = $(this).parent().parent()
+    var target_name = $(target_image).data('image')
+    if(file_field.files.length==1){
+      $('input[type=file]').val(null)
+      dataBox.clearData();
+      console.log(dataBox)
+    }else{
+      $.each(file_field.files, function(i,input){
+        if(input.name==target_name){
+          dataBox.items.remove(i) 
+        }
+      })
+      file_field.files = dataBox.files
+    }
     target_image.remove();
-    file_field.val("")
+    var num = $('.item-image').length
+    $('#image-box__container').show()
+    $('#image-box__container').attr('class', `item-num-${num}`)
   })
 });
