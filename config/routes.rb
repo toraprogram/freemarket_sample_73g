@@ -20,5 +20,6 @@ Rails.application.routes.draw do
       post 'pay', to: 'card#pay'
     end
   end
+  resources :categories, only: :index
 
 end
