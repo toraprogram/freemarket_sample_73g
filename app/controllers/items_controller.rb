@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   
   
+  before_action :set_find,only:[:show, :destroy]
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
     @parents = Category.all.order("id ASC").limit(13)
@@ -31,24 +32,22 @@ class ItemsController < ApplicationController
   end
 
   def create
-      @item = Item.new(item_params)
-      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-      if @item.save
-        redirect_to root_path
-      else
-        render :new
-      end
+    @item = Item.new(item_params)
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   
   def show
-    @item = Item.find(params[:id])
     @items = Item.includes(:images)
     @user = User.find(@item.seller_id)
   end
 
   def destroy
-    @item = Item.find(params[:id])
     @item.destroy
     redirect_to root_path
   end
@@ -61,8 +60,10 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: 1, state: true)
-    # .merge(seller_id: current_user.id)ユーザーデータできたら修正する, imageできたら追加する
+    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: current_user.id, state: true)
   end
 
+  def set_find
+    @item = Item.find(params[:id])
+  end
 end

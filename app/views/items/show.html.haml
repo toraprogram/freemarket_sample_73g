@@ -45,7 +45,7 @@
             .itemBox__price-detail
               %span (税込み)
               %span 送料込み
-          - if current_user.id && @item.seller_id 
+          - if current_user.id == @item.seller_id
             .itemBox__main
               .itemBox__main__edit
                 = link_to '編集する', edit_item_path(@item.id)
@@ -113,14 +113,14 @@
                   %tr
                     %th カテゴリー
                     %td
-                       = link_to "#" do
-                        = @item.category.root.name
-                      %br
-                      = link_to "#" do
-                        = @item.category.parent.name 
-                      %br
-                      = link_to "#" do
-                        = @item.category.name
+                    = link_to "#" do
+                      = @item.category.root.name
+                    %br
+                    = link_to "#" do
+                      = @item.category.parent.name 
+                    %br
+                    = link_to "#" do
+                      = @item.category.name
                   %tr
                     %th ブランド
                     %td 
