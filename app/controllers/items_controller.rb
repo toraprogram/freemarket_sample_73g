@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   require 'payjp'
-  before_action :move_to_session, only: [:buycheck, :payment]
+  before_action :move_to_session, only: [:buycheck, :payment, :new]
 
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
@@ -79,19 +79,21 @@ class ItemsController < ApplicationController
 
   def payment
     if params[:paycheck].blank? || params[:shipping_method].blank?
-      redirect_to item_buycheck_path
-    else
-      item = Item.find(params[:item_id])
-      card = set_payment_card
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      charge = Payjp::Charge.create(amount: item.price, card: card.card_id, currency: 'jpy', customer: card.customer_id)
-      item[:buyer_id] = current_user.id
-      if item.save
-        redirect_to root_path
-      else
-        redirect_to item_buycheck_path
-      end
+      redirect_to item_buycheck_path and return
     end
+    item = Item.find(params[:item_id])
+    card = set_payment_card
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    charge = Payjp::Charge.create(amount: item.price, card: card.card_id, currency: 'jpy', customer: card.customer_id)
+    item[:buyer_id] = current_user.id
+    if item.save
+      redirect_to root_path
+    else
+      redirect_to item_buycheck_path
+    end
+  rescue Payjp::CardError
+    flash[:alert] = "※※※このカードは使用できません。別のカードを使用して下さい※※※"
+    redirect_to item_buycheck_path
   end
 
 
