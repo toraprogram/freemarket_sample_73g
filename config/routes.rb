@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'items#index'
   resources :items do
     get '/buycheck', controller: 'items', action: 'buycheck'
+    post '/payment', controller: 'items', action: 'payment'
     #Ajaxで動くアクションのルートを作成
     collection do
       get 'category' 

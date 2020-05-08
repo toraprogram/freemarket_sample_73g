@@ -6,7 +6,7 @@
     display: flex;
     text-align: center;
     &__contents{
-      width: 50%;
+      width: 70%;
       height: 100%;
       margin: 0 auto;
       margin-top: 50px;
@@ -29,18 +29,20 @@
           width: 200px;
           height: 200px;
           border: 2px solid $font_color;
-          p{
-            line-height: 200px;
-            text-align: center;
+          img{
+            width: 100%;
+            height: 100%;
           }
         }
         &_box{
-          width: 300px;
           padding: 30px 20px;
           &_name{
           }
           &_price{
             padding-top: 30px;
+            p{
+              font-size: 20px;
+            }
           }
         }
       }
@@ -58,30 +60,74 @@
           }
           &_price{
             padding-left: 200px;
+            p{
+              font-size: 15px;
+              line-height: 30px;
+            }
           }
         }
         &_payment{
-          margin: 0 100px;
+          font-weight: bold;
+          width: 60%;
+          margin: 0 auto;
           text-align: left;
+          &_list{
+            font-weight: normal;
+            line-height: 30px;
+            input{
+              padding-right: 20px;
+            }
+            a{
+              font-size: 15px;
+              padding: 0 20px;
+              color: gray;
+            }
+            .first-card_add{
+              align-items: center;
+              padding: 5px;
+            }
+            .second-card_add{
+              align-items: center;
+              padding: 5px;
+            }
+          }
         }
         &_address{
-          margin: 0 100px;
+          font-weight: bold;
+          width: 60%;
           padding-top: 30px;
+          margin: 0 auto;
           text-align: left;
+          &_list{
+            font-weight: normal;
+            line-height: 30px;
+          }
         }
       }
       &_message{
-        width: 45%;
+        width: 80%;
         margin: 0 auto;
         p{
         }
       }
+      &_check{
+        padding: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        input{
+          line-height: 25px;
+        }
+        label{
+          padding-left: 10px;
+        }
+      }
       &_btn{
         line-height: 70px;
-        font-size: 25px;
         padding-bottom: 50px;
         margin: 0 auto;
         .buyitem__contents_submit{
+          font-size: 25px;
           padding: 10px 100px;
           margin: 20px 0;
           border-radius: 10px;
