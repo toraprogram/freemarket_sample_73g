@@ -11,7 +11,7 @@
       .login__main__bottom__left
         %ul.login__main__bottom__left__ul
           %li.login__main__bottom__left__ul__list1
-            = link_to 'カテゴリー', '#', id: 'catBtn'
+            = link_to 'カテゴリー', categories_path, id: 'catBtn'
             = render  "items/nav-category", parent: @parents
           %li.nologin__main__bottom__left__ul__list ブランド
       .nologin__main__bottom__right
