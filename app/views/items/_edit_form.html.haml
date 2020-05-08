@@ -1,11 +1,11 @@
-.upform
+.mainform
   = form_with model: @item, local: true do |f|
     .upform__picture
       .upform__picture__title 出品画像
       .upform__picture__mark 必須
       - if @item.errors.include?(:images)
         %p.upform_error 画像がありません
-      .upform__picture__text ・最大5枚までアップロードできます。
+      .upform__picture__text ・最大5枚までアップロードできます。（画像変更は右から削除してください。）
       .post__drop__box__container
         .prev-content
           - @item.images.each do |image|

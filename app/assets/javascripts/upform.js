@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function(){
 $(function(){
   var dataBox = new DataTransfer();
   var file_field = document.querySelector('input[type=file]')
@@ -50,4 +51,5 @@ $(function(){
     $('#image-box__container').show()
     $('#image-box__container').attr('class', `item-num-${num}`)
   })
+});
 });
