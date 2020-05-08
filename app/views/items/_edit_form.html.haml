@@ -1,0 +1,132 @@
+.mainform
+  = form_with model: @item, local: true do |f|
+    .upform__picture
+      .upform__picture__title 出品画像
+      .upform__picture__mark 必須
+      - if @item.errors.include?(:images)
+        %p.upform_error 画像がありません
+      .upform__picture__text ・最大5枚までアップロードできます。（画像変更は右から削除してください。）
+      .post__drop__box__container
+        .prev-content
+          - @item.images.each do |image|
+            .preview-box
+              .upper-box
+                = image_tag image.image.url, width: "112", height: "112", alt: "preview"
+              .lower-box
+                .update-box
+                  %label.edit-btn 
+                .delete-box
+                  .delete-btn
+                    %span 削除
+        .label-content
+
+          //プレビューの数に合わせてforオプションを指定
+          = f.label :"images_attributes_#{@item.images.length}_image", class: "label-box", id: "label-box--#{@item.images.length}" do
+            .hidden-content
+              %pre.label-box__text-visible 画像選択
+              = f.fields_for :images do |i|
+
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                = i.file_field :image, class: "hidden-field"
+                %label{for: "img-file"}
+                = i.check_box:_destroy, class: "hidden-checkbox"
+
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              - @item.images.length.upto(4) do |i|
+                %input{name: "item[images_attributes][#{i}][image]", id: "item_images_attributes_#{i}_image", class:"hidden-field", type:"file"}
+
+
+    .upform__itemname
+      .upform__itemname__title 商品名
+      .upform__itemname__mark 必須
+      - if @item.errors.include?(:name)
+        %p.upform_error 入力して下さい
+      .upform__itemname__name
+        = f.text_field :name, class: "input_itemName", placeholder: "40文字まで"
+      .upform__itemname__secondtitle 商品の説明
+      .upform__itemname__secondmark 必須
+      - if @item.errors.include?(:description)
+        %p.upform_error 入力して下さい
+      .upform__itemname__secondname
+        = f.text_field :description, class: "input_itemDescription", placeholder: "( 色・素材・重さ・定価・注意点など )"
+      .upform__itemname__thirdtitle 商品のサイズ
+      .upform__itemname__thirdmark 必須
+      - if @item.errors.include?(:size)
+        %p.upform_error 入力して下さい
+      .upform__itemname__thirdname 
+        = f.text_field :size, class: "input_itemSize", placeholder: "( たて × よこ、S・M・Lなど )"
+    .upform__itemdate
+      .upform__itemdate__toptitle 商品の詳細
+      .listing-product-detail__category
+        .upform__itemdate__title カテゴリー
+        .upform__itemdate__mark 必須
+        - if @item.errors.include?(:category_id)
+          %p.upform_error 選択して下さい
+        
+        .listing-select-wrapper
+          .listing-select-wrapper__box
+            .category__form--edit
+              = f.select :parent_name, @category_parent_array, {selected: @item.category.parent.parent.name}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+
+          .listing-select-wrapper__box#children_wrapper
+            .category__form--edit
+              = f.select :child_id, options_for_select(@category_children_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.parent.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'child_category'}
+    
+          .listing-select-wrapper__box#grandchildren_wrapper
+            .category__form--edit
+              = f.select :category_id, options_for_select(@category_grandchildren_array.map{|b| [b.name, b.id, {data:{category: b.id}}]}, {prompt: "指定なし", selected: @item.category.id}),{}, {class: 'listing-select-wrapper__box--select', id: 'grandchild_category'}
+      
+      .upform__itemdate__secondtitle ブランド
+      .upform__itemdate__secondmark 任意
+      .upform__itemdate__brandname
+        %input{placeholder: "選択してください"}
+      .upform__itemdate__thirdtitle 商品の状態
+      .upform__itemdate__thirdmark 必須
+      - if @item.errors.include?(:condition)
+        %p.upform_error 選択して下さい
+      .upform__itemdate__condition
+        = f.select :condition, [["&nbsp;&nbsp;選択して下さい".html_safe, nil],["新品、未使用","新品、未使用"],["未使用に近い","未使用に近い"],["目立った傷や汚れなし","目立った傷や汚れなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]]
+    .upform__delivery
+      .upform__delivery__toptitle 配送について
+      .upform__delivery__title 送料の負担
+      .upform__delivery__mark 必須
+      - if @item.errors.include?(:delivery_charge)
+        %p.upform_error 選択して下さい
+      .upform__delivery__postage
+        = f.select :delivery_charge, [["&nbsp;&nbsp;選択して下さい".html_safe, nil],["送料込み（出品者負担）","送料込み（出品者負担）"],["着払い（購入者負担）","着払い（購入者負担）"]]
+      .upform__delivery__secondtitle 発送元の地域
+      .upform__delivery__secondmark 必須
+      - if @item.errors.include?(:prefecture_id)
+        %p.upform_error 選択して下さい
+      .upform__delivery__area
+        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"}, {class: "input_itemRegion"}#地域ができたら変更
+      .upform__delivery__thirdtitle 発送までの日数
+      .upform__delivery__thirdmark 必須
+      - if @item.errors.include?(:delivery_day)
+        %p.upform_error 選択して下さい
+      .upform__delivery__days
+        = f.select :delivery_day, [["&nbsp;&nbsp;選択して下さい".html_safe, nil],["１〜２日で発送","１〜２日で発送"],["２〜３日で発送","２〜３日で発送"],["４〜５日で発送","４〜５日で発送"]]
+      
+    .upform__price
+      .upform__price__toptitle 価格（¥300〜9,999,999） 半角で入力して下さい
+      - if @item.errors.include?(:price)
+        %p.upform_error_price 300~9,999,999の範囲で半角で入力して下さい
+      .upform__price__title 販売価格
+      .upform__price__mark 必須
+      .upform__price__yenmark ￥
+      .upform__price__saleprice
+        = f.number_field :price, class: "input_sellprice", placeholder: "0" 
+      .upform__price__secondtitle 販売手数料（10%）
+      .upform__price__minuskey ー
+      .upform__price__underline
+      .upform__price__thirdtitle 販売利益
+      .upform__price__secondminuskey ー
+      
+    .upform__itemupper
+      .upform__itemupper__button
+        = f.button '編集する', type: 'button', class: "submit-btn", onclick: "submit()"
+
+  .upform__returnkey
+    .upform__returnkey__button
+      = link_to "#" do
+        %p.group__btn もどる

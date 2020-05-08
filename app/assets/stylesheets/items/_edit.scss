@@ -1,4 +1,4 @@
-.upform {
+.mainform {
   margin: 0 auto;
   width: 740px;
   .upform_error{
@@ -8,16 +8,16 @@
     padding-right: 120px;
     float: right;
   }
-  &__picture {
+  .sell__block__form {
     padding: 40px;
     margin-top: 5px;
     border: solid 2px #3CCACE;
-    &__title {
+    &__upload {
       font-size: 16px;
       font-weight: bold;
       float: left;
     }
-    &__mark {
+    .require {
       font-size: 16px;
       font-weight: bold;
       background-color: rgb(238, 255, 0);
@@ -28,70 +28,10 @@
       margin-left: 10px;
       float: left;
     }
-    &__text {
+    .upform__picture__text {
       font-size: 16px;
       margin-top: 40px;
       margin-bottom: 20px;
-    }
-
-    .item-image {
-      display: inline-block;
-      margin-left: 12px;
-      margin-bottom: 10px;
-      border: solid 2px #3CCACE;
-      &__operetion--delete {
-        font-size: 12px;
-        background-color: yellow;
-        width: 45px;
-        text-align: center;
-        border: solid 1px;
-        border-radius: 7px;
-        margin: 0 auto;
-        margin-bottom: 5px;
-        font-weight: bold;
-        cursor: pointer;
-      }
-    }
-    
-    .item-num-0{
-      width: 100%;
-      height: 40px;
-      background: rgb(222, 247, 4);
-      border: 1px dotted;
-      cursor: pointer;
-      position: relative;
-    }
-    .item-num-1{
-      width: 491px;
-      height: 40px;
-      background: rgb(141, 245, 5);
-      border: 1px dotted;
-      cursor: pointer;
-      position: relative;
-    }
-    .item-num-2{
-      width: 363px;
-      height: 40px;
-      background: rgb(3, 241, 130);
-      border: 1px dotted;
-      cursor: pointer;
-      position: relative;
-    }
-    .item-num-3{
-      width: 234px;
-      height: 40px;
-      background: rgb(5, 200, 248);
-      border: 1px dotted;
-      cursor: pointer;
-      position: relative;
-    }
-    .item-num-4{
-      width: 106px;
-      height: 60px;
-      background: rgb(2, 106, 241);
-      border: 1px dotted;
-      cursor: pointer;
-      position: relative;
     }
     
     
@@ -497,3 +437,58 @@
   }
 }
 
+
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 15px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
+    }
+  }
+}
+
+#image-box-1{
+  display: flex;
+}
+
+.hidden-field{
+  display: none;
+  height: 100px;
+  width: 100px;
+}
+
+label{
+  height: 200px;
+  width: 200px;
+
+}
+
+.label-box__text-visible{
+  text-align: center ;
+  line-height: 200px;
+  display: block;
+  width: 100%;
+  // background-color: yellow;
+}
+
+.label-content{
+  height: 200px;
+  width: 600px;
+  background-color: gray;
+  display: block;
+}

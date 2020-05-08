@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
 
   require 'payjp'
+
+  before_action :set_find,only:[:show, :destroy, :edit, :update]
   before_action :move_to_session, only: [:buycheck, :payment, :new]
-  before_action :set_find,only:[:show, :destroy]
 
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
@@ -67,7 +68,6 @@ class ItemsController < ApplicationController
       card_info2 = Payjp::Customer.retrieve(current_user.cards.last.customer_id) if current_user.cards.count == 2
       @second_card_information = card_info2.cards.retrieve(current_user.cards.last.card_id) if current_user.cards.count == 2
     end
-    
   end
 
   def payment
@@ -89,10 +89,42 @@ class ItemsController < ApplicationController
     redirect_to item_buycheck_path
   end
 
+  def edit
+    @item.images
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+    @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+    @category_grandchildren_array << grandchildren
+    end 
+  end
+
+  def update
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: current_user.id, state: true)
+    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache, :id ,:_destroy]).merge(seller_id: current_user.id, state: true)
+
   end
 
   def move_to_session
@@ -114,5 +146,9 @@ class ItemsController < ApplicationController
 
   def set_find
     @item = Item.find(params[:id])
+  end
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
   end
 end
