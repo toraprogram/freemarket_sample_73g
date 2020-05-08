@@ -54,12 +54,47 @@ class ItemsController < ApplicationController
     render 'items/buycheck'
   end
 
+  def edit
+    @item = Item.find(params[:id])
+    # @image = Image.find(params[:id])
+    @item.images
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
 
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+    @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+    @category_grandchildren_array << grandchildren
+    end
+    
+  end
+
+  def update
+    @item = Item.find(params[:id])
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    # @user = User.find(params[:id])
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
+  end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: 1, state: true)
+    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache, :id ,:_destroy]).merge(seller_id: current_user.id, state: true)
     # .merge(seller_id: current_user.id)ユーザーデータできたら修正する, imageできたら追加する
   end
 
