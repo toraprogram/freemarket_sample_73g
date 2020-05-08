@@ -58,7 +58,6 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
-    # @image = Image.find(params[:id])
     @item.images
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
     grandchild_category = @item.category
@@ -84,7 +83,6 @@ class ItemsController < ApplicationController
   def update
     @item = Item.find(params[:id])
     @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-    # @user = User.find(params[:id])
     if @item.update(item_params)
       redirect_to root_path
     else
