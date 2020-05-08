@@ -140,6 +140,19 @@
     &__text {
     }
   }
+  &__sold {
+    font-size: 20px;
+    text-align: center;
+    &__box {
+      color: white;
+      font-weight: bold;
+      margin: 0 auto;
+      line-height: 55px;
+      height: 55px;
+      width: 560px;
+      background-color: #3CCAEC;
+    }
+}
   .itemDetail {
     line-height: 1.5;
     font-size: 18px;
