@@ -27,7 +27,7 @@
           .buyitem__contents_content_payment
             %p 支払い方法
             .buyitem__contents_content_payment_list
-              - if @cards == 0
+              - if current_user.cards.count == 0
                 = link_to '/card' do
                   %p ※※クレジットカードを登録して下さい※※
               - else
@@ -35,10 +35,10 @@
                   %p クレジットカードを選択して下さい
                   = f.radio_button :shipping_method, "card1"
                   = "**** **** ****" + "#{@default_card_information.last4}"
-              - if @cards == 2
+              - if current_user.cards.count == 2
                 .second-card_add
                   = f.radio_button :shipping_method, "card2"
-                  = "**** **** ****" + @second_card_information.last4
+                  = "**** **** ****" + "#{@second_card_information.last4}"
           .buyitem__contents_content_address
             %p 配送先
             .buyitem__contents_content_address_list

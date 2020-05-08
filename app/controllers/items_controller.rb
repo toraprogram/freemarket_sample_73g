@@ -58,22 +58,16 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:item_id])
     @items = Item.includes(:images)
     set_address
-    @cards = Card.where(user_id: current_user.id).count
-    if @cards == 0
-      render 'items/buycheck'
+    if current_user.cards.blank?
+      render :buycheck
     else
-      if @cards == 2
-        card_sec = Card.where(user_id: current_user.id).last
-        Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-        customer = Payjp::Customer.retrieve(card_sec.customer_id)
-        @second_card_information = customer.cards.retrieve(card_sec.card_id)
-      end
-      card = Card.where(user_id: current_user.id).first
       Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
-      customer = Payjp::Customer.retrieve(card.customer_id)
-      @default_card_information = customer.cards.retrieve(card.card_id)
-      render 'items/buycheck'
+      card_info1 = Payjp::Customer.retrieve(current_user.cards.first.customer_id)
+      @default_card_information = card_info1.cards.retrieve(current_user.cards.first.card_id)
+      card_info2 = Payjp::Customer.retrieve(current_user.cards.last.customer_id) if current_user.cards.count == 2
+      @second_card_information = card_info2.cards.retrieve(current_user.cards.last.card_id) if current_user.cards.count == 2
     end
+    
   end
 
   def payment
