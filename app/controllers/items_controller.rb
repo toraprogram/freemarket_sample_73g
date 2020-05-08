@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
-  
-  
+
+  require 'payjp'
+
   before_action :set_find,only:[:show, :destroy, :edit, :update]
   before_action :move_to_session, only: [:buycheck, :payment, :new]
+
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
     @parents = Category.all.order("id ASC").limit(13)
@@ -54,7 +56,37 @@ class ItemsController < ApplicationController
   end
 
   def buycheck
-    render 'items/buycheck'
+    @item = Item.find(params[:item_id])
+    @items = Item.includes(:images)
+    set_address
+    if current_user.cards.blank?
+      render :buycheck
+    else
+      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      card_info1 = Payjp::Customer.retrieve(current_user.cards.first.customer_id)
+      @default_card_information = card_info1.cards.retrieve(current_user.cards.first.card_id)
+      card_info2 = Payjp::Customer.retrieve(current_user.cards.last.customer_id) if current_user.cards.count == 2
+      @second_card_information = card_info2.cards.retrieve(current_user.cards.last.card_id) if current_user.cards.count == 2
+    end
+  end
+
+  def payment
+    if params[:paycheck].blank? || params[:shipping_method].blank?
+      redirect_to item_buycheck_path and return
+    end
+    item = Item.find(params[:item_id])
+    card = set_payment_card
+    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    charge = Payjp::Charge.create(amount: item.price, card: card.card_id, currency: 'jpy', customer: card.customer_id)
+    item[:buyer_id] = current_user.id
+    if item.save
+      redirect_to root_path
+    else
+      redirect_to item_buycheck_path
+    end
+  rescue Payjp::CardError
+    flash[:alert] = "※※※このカードは使用できません。別のカードを使用して下さい※※※"
+    redirect_to item_buycheck_path
   end
 
   def edit
@@ -76,8 +108,7 @@ class ItemsController < ApplicationController
     @category_grandchildren_array = []
     Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
     @category_grandchildren_array << grandchildren
-    end
-    
+    end 
   end
 
   def update
@@ -94,6 +125,23 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache, :id ,:_destroy]).merge(seller_id: current_user.id, state: true)
 
+  end
+
+  def move_to_session
+    redirect_to new_user_session_path unless user_signed_in?
+  end
+
+  def set_address
+    @address = Address.find_by(user_id: current_user.id)
+    @prefecture = Prefecture.find(@address.prefecture_id)
+  end
+
+  def set_payment_card
+    if params[:shipping_method] == "card2"
+      card = Card.where(user_id: current_user.id).second
+    else
+      card = Card.where(user_id: current_user.id).first
+    end
   end
 
   def set_find

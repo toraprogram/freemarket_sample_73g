@@ -2,32 +2,58 @@
   = render "header"
   .buyitem
     .buyitem__contents
+      = alert
       .buyitem__contents_head
         %p 購入内容の確認
       .buyitem__contents_info
         .buyitem__contents_info_image
-          %p no image
+          = image_tag "#{@item.images.first.image}" 
         .buyitem__contents_info_box
           .buyitem__contents_info_box_name
-            %p [値下げ] プロポーション ボディドレッシング プリーツスカート 2 青紫
+            = @item.name
           .buyitem__contents_info_box_price
-            %p ¥1,400 （税込）送料込み
-      .buyitem__contents_content
-        .buyitem__contents_content_box
-          .buyitem__contents_content_box_head
-            %p 支払い金額
-          .buyitem__contents_content_box_price
-            %p ¥1,400
-        .buyitem__contents_content_payment
-          %p 支払い方法
-          .buyitem__contents_payment_list
-            %p 選択して下さい
-        .buyitem__contents_content_address
-          %p 配送先
-          .main__contents_content_address
-            %p 登録して下さい
-      .buyitem__contents_message
-        %p 出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
-      .buyitem__contents_btn
-        %input{type: "submit",class: "buyitem__contents_submit", value: "購入する"}
+            = "¥" + "__#{@item.price}"
+            %br
+            = @item.delivery_charge
+      = form_with url: "/items/#{@item.id}/payment", local: true, method: "POST" do |f|
+        .buyitem__contents_content
+          .buyitem__contents_content_box
+            .buyitem__contents_content_box_head
+              %p 支払い金額
+            .buyitem__contents_content_box_price
+              = @item.price
+              - if @item.delivery_charge == "着払い（購入者負担）"
+                %p ＋送料
+          .buyitem__contents_content_payment
+            %p 支払い方法
+            .buyitem__contents_content_payment_list
+              - if current_user.cards.count == 0
+                = link_to '/card' do
+                  %p ※※クレジットカードを登録して下さい※※
+              - else
+                .first-card_add
+                  %p クレジットカードを選択して下さい
+                  = f.radio_button :shipping_method, "card1"
+                  = "**** **** ****" + "#{@default_card_information.last4}"
+              - if current_user.cards.count == 2
+                .second-card_add
+                  = f.radio_button :shipping_method, "card2"
+                  = "**** **** ****" + "#{@second_card_information.last4}"
+          .buyitem__contents_content_address
+            %p 配送先
+            .buyitem__contents_content_address_list
+              = "〒" + @address.postal_code
+              %br
+              = @prefecture.name
+              = @address.city
+              = @address.block
+              = @address.building
+        .buyitem__contents_message
+          %p 出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
+        .buyitem__contents_check
+          = check_box_tag :paycheck
+          = label_tag :paycheck do
+            %p 購入内容を確認しました
+        .buyitem__contents_btn
+          = f.button '購入する', type: 'button', class: "buyitem__contents_submit", onclick: "submit()"
   = render "footer" 

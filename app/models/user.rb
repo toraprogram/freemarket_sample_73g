@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   has_one :address
   accepts_nested_attributes_for :address
-  has_one :card, dependent: :destroy, inverse_of: :user
+  has_many :cards, dependent: :destroy
   has_many :comments
   has_many :likes
   has_many :items, foreign_key: "seller_id", class_name: "Item"
