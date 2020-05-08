@@ -51,6 +51,9 @@
         &__ul {
           display: flex;
           justify-content: space-between;
+          &__list {
+            padding-left: 120px;
+          }
         }
       }
       &__right {
