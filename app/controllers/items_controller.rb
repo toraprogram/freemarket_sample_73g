@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   
   
   before_action :set_find,only:[:show, :destroy]
+  before_action :move_to_session, only: [:buycheck, :payment, :new]
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
     @parents = Category.all.order("id ASC").limit(13)
