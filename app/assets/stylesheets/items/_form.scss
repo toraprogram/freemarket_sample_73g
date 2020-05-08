@@ -33,6 +33,25 @@
       margin-top: 40px;
       margin-bottom: 20px;
     }
+
+    .item-image {
+      display: inline-block;
+      margin-left: 12px;
+      margin-bottom: 10px;
+      border: solid 2px #3CCACE;
+      &__operetion--delete {
+        font-size: 12px;
+        background-color: yellow;
+        width: 45px;
+        text-align: center;
+        border: solid 1px;
+        border-radius: 7px;
+        margin: 0 auto;
+        margin-bottom: 5px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
     
     .item-num-0{
       width: 100%;

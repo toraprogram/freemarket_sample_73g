@@ -47,12 +47,16 @@
   &__body {
     margin: 16px 0 0 ;
     .item-image {
+    .top-picture {
+      display: block;
+      margin: 0 auto;
+    }
       .main-image {
         display: flex;
         width: 560px;
         margin: 0 auto;
         img {
-          width: 100%;
+          width: 100px;
           height: 346px;
         }
       }
