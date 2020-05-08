@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", function(){
+// document.addEventListener("turbolinks:load", function(){
   $(function(){
     // カテゴリーセレクトボックスのオプションを作成
     function appendOption(category){
@@ -96,4 +96,4 @@ document.addEventListener("turbolinks:load", function(){
       }
     });
   });
-});
+// });

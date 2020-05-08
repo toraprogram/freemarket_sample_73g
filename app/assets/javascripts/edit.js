@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+// $(document).on('turbolinks:load', function(){
   $(function(){
 
     //プレビューのhtmlを定義
@@ -140,4 +140,4 @@ $(document).on('turbolinks:load', function(){
       //=============================================================================
     });
   });
-});
+// });
