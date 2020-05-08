@@ -57,11 +57,43 @@ class ItemsController < ApplicationController
     render 'items/buycheck'
   end
 
+  def edit
+    @item.images
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+    @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+    @category_grandchildren_array << grandchildren
+    end
+    
+  end
+
+  def update
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if @item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to edit_item_path
+    end
+  end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache]).merge(seller_id: current_user.id, state: true)
+    params.require(:item).permit(:name, :price, :description, :condition, :delivery_charge, :delivery_day, :size, :prefecture_id, :category_id, :brand_id, images_attributes: [:image, :image_cache, :id ,:_destroy]).merge(seller_id: current_user.id, state: true)
+
   end
 
   def set_find

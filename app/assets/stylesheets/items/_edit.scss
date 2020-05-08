@@ -1,0 +1,535 @@
+.main {
+  margin: 0 auto;
+  width: 740px;
+  .upform_error{
+    color: red;
+    font-weight: bold;
+    font-size: 15px;
+    padding-right: 120px;
+    float: right;
+  }
+  .sell__block__form {
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__upload {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    .require {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: rgb(238, 255, 0);
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    .upform__picture__text {
+      font-size: 16px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    
+    .item-num-0{
+      width: 100%;
+      height: 40px;
+      background: rgb(222, 247, 4);
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-1{
+      width: 491px;
+      height: 40px;
+      background: rgb(141, 245, 5);
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-2{
+      width: 363px;
+      height: 40px;
+      background: rgb(3, 241, 130);
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-3{
+      width: 234px;
+      height: 40px;
+      background: rgb(5, 200, 248);
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    .item-num-4{
+      width: 106px;
+      height: 60px;
+      background: rgb(2, 106, 241);
+      border: 1px dotted;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    
+    .icon {
+      position: absolute;
+      top: 10px;
+      left: 7px;
+      cursor: pointer;
+    }
+    .text {
+      font-size: 12px;
+      position: absolute;
+      top: 9px;
+      left: 28px;
+      cursor: pointer;
+    }
+    .fas.fa-image {
+      width: 100%;
+      height: 40px;
+      cursor: pointer;
+      opacity: 0;
+    }
+  }
+ 
+  &__itemname {
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__name {
+      margin-top: 45px;
+      margin-bottom: 30px;
+        .input_itemName{
+          padding-left: 20px;
+          width: 650px;
+          height: 36px;
+        }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__secondname {
+      margin-top: 80px;
+      margin-bottom: 30px;
+        .input_itemDescription{
+          padding-left: 20px;
+          width: 650px;
+          height: 36px;
+          border: 1px solid $form_color;
+        }
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__thirdmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__thirdname {
+      margin-top: 80px;
+      margin-bottom: 30px;
+        .input_itemSize{
+          padding-left: 20px;
+          width: 650px;
+          height: 36px;
+          border: 1px solid $form_color;
+        }
+    }
+  }
+
+  &__itemdate {
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    .listing-select-wrapper__box {
+      margin-top: 40px;
+      margin-bottom: 30px;
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      color: gray;
+      width: 45px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__brandname {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      input {
+        padding-left: 20px;
+        width: 650px;
+        height: 36px;
+      }
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__thirdmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__condition {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
+    }
+  }
+
+  &__delivery {
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__postage {
+      margin-top: 68px;
+      margin-bottom: 30px;
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__secondmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__area {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+    }
+    &__thirdmark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      float: left;
+    }
+    &__days {
+      margin-top: 70px;
+      margin-bottom: 30px;
+      select{
+        width: 650px;
+        height: 36px;
+        border: 1px solid $form_color;
+        background-color: $base_color;
+      }
+    }
+  }
+
+  &__price {
+    height: 350px;
+    padding: 40px;
+    margin-top: 5px;
+    border: solid 2px #3CCACE;
+    &__toptitle {
+      font-size: 16px;
+      color: gray;
+      margin-bottom: 30px;
+    }
+    .upform_error_price{
+      color: red;
+      font-weight: bold;
+      font-size: 15px;
+      float: right;
+    }
+    &__title {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+      padding-top: 10px;
+    }
+    &__mark {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: yellow;
+      width: 45px;
+      text-align: center;
+      border: solid 1px;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-top: 10px;
+      float: left;
+    }
+    &__yenmark {
+      margin-left: 200px;
+      float: left;
+      padding-top: 10px;
+    }
+    &__saleprice {
+      float: left;
+      margin-left: 5px;
+      input {
+        width: 300px;
+        height: 36px;
+        text-align: right;
+        padding-right: 20px;
+      }
+    }
+    &__secondtitle {
+      font-size: 16px;
+      margin-top: 40px;
+      float: left;
+    }
+    &__minuskey {
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 40px;
+      float: right;
+    }
+    &__underline {
+      height: 10px;
+      width: 650px;
+      border-bottom: solid 1px gray;
+      float: left;
+      margin-top: 30px;
+    }
+    &__thirdtitle {
+      font-size: 16px;
+      margin-top: 40px;
+      float: left;
+    }
+    &__secondminuskey {
+      font-size: 16px;
+      margin-right: 20px;
+      margin-top: 40px;
+      float: right;
+    }
+  }
+  &__itemupper {
+    padding: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    &__button {
+      button {
+        display: block;
+        font-size: 25px;
+        color: black;
+        background-color: #3CCACE;
+        border-radius: 10px;
+        height: 70px;
+        width: 240px;
+        line-height: 70px;
+        text-align: center;
+        border: 1px solid #3CCACE;;
+        text-decoration: none;
+      }
+      button:hover{
+        cursor: pointer;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  &__returnkey {
+    padding: 15px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    &__button {
+      a {
+        display: block;
+        font-size: 16px;
+        color: black;
+        height: 35px;
+        width: 240px;
+        line-height: 35px;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 15px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
+    }
+  }
+}
+
+#image-box-1{
+  display: flex;
+}
+
+.hidden-field{
+  display: none;
+  height: 100px;
+  width: 100px;
+}
+
+label{
+  height: 200px;
+  width: 200px;
+
+}
+
+.label-box__text-visible{
+  text-align: center ;
+  line-height: 200px;
+  display: block;
+  width: 100%;
+  // background-color: yellow;
+}
+
+.label-content{
+  height: 200px;
+  width: 600px;
+  background-color: gray;
+  display: block;
+}
