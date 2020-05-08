@@ -1,6 +1,8 @@
 .top
   = render "items/miniheader"
   .top__middle
+    - breadcrumb :loginer
+    = breadcrumbs separator: " &rsaquo; "
     .top__middle__new
       .top__middle__new__title アカウントをお持ちでない方はこちら
       .top__middle__new__box 

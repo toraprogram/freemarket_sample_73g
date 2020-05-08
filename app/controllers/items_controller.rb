@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   require 'payjp'
   before_action :move_to_session, only: [:buycheck, :payment]
+  before_action :set_find,only:[:show, :destroy]
 
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
@@ -33,24 +34,22 @@ class ItemsController < ApplicationController
   end
 
   def create
-      @item = Item.new(item_params)
-      @category_parent_array = Category.where(ancestry: nil).pluck(:name)
-      if @item.save
-        redirect_to root_path
-      else
-        render :new
-      end
+    @item = Item.new(item_params)
+    @category_parent_array = Category.where(ancestry: nil).pluck(:name)
+    if @item.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   
   def show
-    @item = Item.find(params[:id])
     @items = Item.includes(:images)
     @user = User.find(@item.seller_id)
   end
 
   def destroy
-    @item = Item.find_by(id: params[:id])
     @item.destroy
     redirect_to root_path
   end
@@ -94,7 +93,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   private
 
   def item_params
@@ -116,5 +114,9 @@ class ItemsController < ApplicationController
     else
       card = Card.where(user_id: current_user.id).first
     end
+  end
+
+  def set_find
+    @item = Item.find(params[:id])
   end
 end

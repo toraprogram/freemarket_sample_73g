@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one :card, dependent: :destroy, inverse_of: :user
   has_many :comments
   has_many :likes
-  has_many :items, foreign_key: "saler_id", class_name: "Item"
+  has_many :items, foreign_key: "seller_id", class_name: "Item"
   has_many :items, foreign_key: "buyer_id", class_name: "Item"
   has_many :orders
 

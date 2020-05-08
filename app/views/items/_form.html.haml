@@ -1,4 +1,6 @@
 .upform
+  - breadcrumb :former
+  = breadcrumbs separator: " &rsaquo; "
   = form_with model: @item, local: true, method: "POST" do |f|
     .upform__picture
       .upform__picture__title 出品画像
