@@ -21,5 +21,5 @@ class Item < ApplicationRecord
   validates :prefecture_id, presence: true
   validates :size, presence: true
   validates :state, presence: true, inclusion: { in: [true, false] }
-  validates_associated :images
+  validates :images, presence: true
 end
