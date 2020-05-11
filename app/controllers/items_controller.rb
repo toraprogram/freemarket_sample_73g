@@ -62,7 +62,7 @@ class ItemsController < ApplicationController
     if current_user.cards.blank?
       render :buycheck
     else
-      Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+      Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
       card_info1 = Payjp::Customer.retrieve(current_user.cards.first.customer_id)
       @default_card_information = card_info1.cards.retrieve(current_user.cards.first.card_id)
       card_info2 = Payjp::Customer.retrieve(current_user.cards.last.customer_id) if current_user.cards.count == 2
@@ -76,7 +76,7 @@ class ItemsController < ApplicationController
     end
     item = Item.find(params[:item_id])
     card = set_payment_card
-    Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_PRIVATE_KEY)
     charge = Payjp::Charge.create(amount: item.price, card: card.card_id, currency: 'jpy', customer: card.customer_id)
     item[:buyer_id] = current_user.id
     if item.save
