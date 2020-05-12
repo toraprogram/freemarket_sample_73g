@@ -55,5 +55,8 @@
           = label_tag :paycheck do
             %p 購入内容を確認しました
         .buyitem__contents_btn
-          = f.button '購入する', type: 'button', class: "buyitem__contents_submit", onclick: "submit()"
+          - if @item.buyer_id.blank?
+            = f.button '購入する', type: 'button', class: "buyitem__contents_submit", onclick: "submit()"
+          - else
+            %p.solditem この商品は既に購入されました
   = render "footer" 
