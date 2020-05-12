@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   before_action :set_find,only:[:show, :destroy, :edit, :update]
   before_action :move_to_session, only: [:buycheck, :payment, :new]
   before_action :bought_item_check, only: :buycheck
+  before_action :correct_user, only: [:edit]
 
   def index
     @items = Item.includes(:images, :category, :seller).order(created_at: :desc) 
@@ -156,5 +157,10 @@ class ItemsController < ApplicationController
   def bought_item_check
     @item = Item.find(params[:item_id])
     redirect_to root_path unless @item.buyer_id.blank?
+  end
+
+  def correct_user
+    @item = Item.find(params[:id])
+    redirect_to root_path if current_user.id != @item.seller_id
   end
 end
