@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   before_action :set_find,only:[:show, :destroy, :edit, :update]
-  before_action :move_to_session, only: [:buycheck, :payment, :new]
+  before_action :move_to_session, only: [:buycheck, :payment, :new, :edit]
   before_action :bought_item_check, only: :buycheck
   before_action :correct_user, only: [:edit]
 
