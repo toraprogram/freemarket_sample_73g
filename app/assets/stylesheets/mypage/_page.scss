@@ -42,33 +42,51 @@
       &_myitems{
         width: 100%;
         height: 250px;
-        font-size: 25px;
-        padding: 30px 30px 40px 30px;
+        font-size: 20px;
+        padding: 30px 30px 10px 30px;
         margin-top: 50px;
         background-color: $base-color;
         display: flex;
         position: relative;
+        p{
+          line-height: 30px;
+        }
         &_box{
           width: calc(100% - 60px);
           position: absolute;
-          bottom: 20px;
+          top: 70px;
           display: flex;
           &_trading{
             width: 50%;
             font-size: 20px;
             text-align: center;
-            background-color: white;
+            p{
+              border-bottom: 2px solid $maincolor;
+            }
             &_list{
-              background-color:white;
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
+              width: 100%;
+              padding-top: 20px;
+              display: flex;
+              justify-content: space-between;
+              img{
+                height: 50px;
+                object-fit: cover;
+              }
+              .bought-item_last{
+                &_name{
+                  font-size: 15px;
                 }
-              }             
+                p{
+                  color: gray;
+                  font-size: 15px;
+                }
+                
+              }
+              .bought-item_first{
+                &_name{
+                  font-size: 15px;
+                }
+              }
             }
           }
           &_traded{

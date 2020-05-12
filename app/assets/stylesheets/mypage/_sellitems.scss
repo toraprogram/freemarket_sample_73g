@@ -9,7 +9,7 @@
       margin-top: 30px;
       &_sellitems{
         width: 100%;
-        height: 250px;
+        height: 50%;
         font-size: 25px;
         padding: 30px;
         background-color: $base-color;
@@ -18,37 +18,19 @@
         &_box{
           width: calc(100% - 60px);
           position: absolute;
-          bottom: 30px;
+          top: 70px;
           display: flex;
           &_sell{
             width: 50%;
             font-size: 20px;
             text-align: center;
-            &_list{
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
-                }
-              }
+            p{
+              border-bottom: 2px solid $maincolor;
             }
-          }
-          &_trading{
-            width: 50%;
-            font-size: 20px;
-            text-align: center;
             &_list{
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
-                }
+              padding-top: 20px;
+              a{
+                display: block;
               }
             }
           }
@@ -56,15 +38,13 @@
             width: 50%;
             font-size: 20px;
             text-align: center;
+            p{
+              border-bottom: 2px solid $maincolor;
+            }
             &_list{
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
-                }
+              padding-top: 20px;
+              a{
+                display: block;
               }
             }
           }

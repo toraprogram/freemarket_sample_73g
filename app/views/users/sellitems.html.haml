@@ -10,19 +10,11 @@
             .sellitems__contents_sellitems_box_sell
               %p 出品中
               .sellitems__contents_sellitems_box_sell_list
-                %ul
-                  %li item1
-                  %li item2
-            .sellitems__contents_sellitems_box_trading
-              %p 取引中
-              .sellitems__contents_sellitems_box_trading_list
-                %ul
-                  %li item3
-                  %li item4
+                - @sellingitems.each do |sellingitem|
+                  = link_to "#{sellingitem.name}", item_path(sellingitem)
             .sellitems__contents_sellitems_box_traded
               %p 売却済み
               .sellitems__contents_sellitems_box_traded_list
-                %ul
-                  %li item3
-                  %li item4
+                - @solditems.each do |solditem|
+                  = link_to "#{solditem.name}", item_path(solditem)
   = render "items/footer"
