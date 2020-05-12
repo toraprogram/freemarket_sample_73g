@@ -5,11 +5,13 @@
     display: flex;
     &__contents{
       width: 80%;
+      height: 90%;
       margin: 0 auto;
       margin-top: 30px;
+      background-color: $background-color;
       &_sellitems{
         width: 100%;
-        height: 50%;
+        height: 100%;
         font-size: 25px;
         padding: 30px;
         background-color: $base-color;
