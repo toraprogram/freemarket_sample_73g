@@ -37,7 +37,8 @@
             .items-box_photo__sold__inner
               SOLD
         .search__section4__box__main__product__lists1__image
-          = image_tag "#{item.images.first.image}"
+          = link_to item_path "#{item.id}" do
+            = image_tag "#{item.images.first.image}"
           .search__section4__box__main__product__lists1__list
             .search__section4__box__main__product__lists1__list__text
               = item.name
