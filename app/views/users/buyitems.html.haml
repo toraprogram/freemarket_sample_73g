@@ -10,13 +10,6 @@
             .buyitems__contents_buyitems_box_trading
               %p 取引中
               .buyitems__contents_buyitems_box_trading_list
-                %ul
-                  %li item1
-                  %li item2
-            .buyitems__contents_buyitems_box_traded
-              %p 過去の取引
-              .buyitems__contents_buyitems_box_traded_list
-                %ul
-                  %li item3
-                  %li item4
+                - @boughtitems.each do |boughtitem|
+                  = link_to "#{boughtitem.name}", item_path(boughtitem)
   = render "items/footer"

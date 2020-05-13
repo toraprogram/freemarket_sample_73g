@@ -5,11 +5,11 @@
     display: flex;
     &__contents{
       width: 80%;
-      height: 80%;
+      height: 90%;
       margin: 0 auto;
       &_buyitems{
         width: 100%;
-        height: 250px;
+        height: 100%;
         font-size: 25px;
         padding: 30px;
         margin-top: 50px;
@@ -19,37 +19,18 @@
         &_box{
           width: calc(100% - 60px);
           position: absolute;
-          bottom: 30px;
+          top: 70px;
           display: flex;
           &_trading{
             width: 50%;
             font-size: 20px;
             text-align: center;
-            &_list{
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
-                }
-              }
+            p{
+              border-bottom: 2px solid $maincolor;
             }
-          }
-          &_traded{
-            width: 50%;
-            font-size: 20px;
-            text-align: center;
             &_list{
-              ul{
-                display: flex;
-                justify-content: space-around;
-                padding: 0 30px;
-                li{
-                  height: 80px;
-                  line-height: 80px;
-                }
+              a{
+                display: block;
               }
             }
           }
