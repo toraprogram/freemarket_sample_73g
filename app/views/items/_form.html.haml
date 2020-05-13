@@ -96,7 +96,7 @@
       
     .upform__itemupper
       .upform__itemupper__button
-        = f.button '出品する', type: 'button', class: "submit-btn", onclick: "submit()"
+        = f.submit '出品する',  class: "submit-btn", data: { disable_with: '問い合わせ中...' }
 
   .upform__returnkey
     .upform__returnkey__button

@@ -457,7 +457,7 @@
     display: flex;
     justify-content: center;
     &__button {
-      button {
+      .submit-btn {
         display: block;
         font-size: 25px;
         color: black;
@@ -470,7 +470,7 @@
         border: 1px solid #3CCACE;;
         text-decoration: none;
       }
-      button:hover{
+      .submit-btn:hover{
         cursor: pointer;
         opacity: 0.6;
       }
