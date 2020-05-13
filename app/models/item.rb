@@ -22,4 +22,9 @@ class Item < ApplicationRecord
   validates :size, presence: true
   validates :state, presence: true, inclusion: { in: [true, false] }
   validates :images, presence: true
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
 end

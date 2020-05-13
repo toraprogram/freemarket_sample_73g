@@ -1,3 +1,5 @@
+
+
 .login {
   &__main {
     margin: 0 auto;
@@ -19,23 +21,34 @@
         }
       }
       &__key {
-        padding-left: 170px;
-        display: flex;
+        &__search {
+          margin-left: 180px;
+          width: 700px;
+          height: 34px;
+          border: solid 1px #eee;
+        }
+        &__submit {
+          height: 35px;
+          border: solid 1px white;
+          width: 45px;
+          color: #3ccaec;
+          background-color: #3CCACE;
           input {
-          width: 820px;
-          height: 36px;
+          padding-top: 35px;
+          height: 40px;
           }
-          &__search {
-            height: 38px;
-            width: 30px;
-            img {
-            max-width: 35px;
-            background-color: $maincolor;
-            border: 0;
-            cursor: pointer;
-            padding: 8px;
-            } 
+        }
+        &__icon {
+          position: absolute;
+          left: 895px;
+          top: 8px;
+          font-weight: bold;
+          color: white;
+          block-size: 20px;
+          font-size: 20px;
+          .fa {
           }
+        }
       } 
     }
     &__bottom {
