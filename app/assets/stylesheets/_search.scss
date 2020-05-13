@@ -116,3 +116,26 @@
     }
 }
 
+.search__section4__box__main__product__lists1 {
+  position: relative;
+  .search-box_photo__sold{
+    width: 0;
+    height: 0;
+    border-top: 40px solid $maincolor;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid transparent;
+    border-left: 40px solid $maincolor ;
+    z-index:100;
+    position: absolute;
+    top:0px;
+    &__inner{
+      transform: rotate(-45deg);
+      font-size: 18px;
+      margin:-20px 0px 0px -40px;
+      color: #fff;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+  }
+}
+
