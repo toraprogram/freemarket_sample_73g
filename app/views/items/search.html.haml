@@ -1,0 +1,49 @@
+.search
+  .search__main
+    .search__main__inner
+      .search__main__inner__icon
+        = link_to root_path do
+          = image_tag "logo/logo.png"
+      .search__main__inner__key
+      = form_with(url: search_items_path, local: true, method: :get) do |s|
+        = s.text_field :keyword, placeholder: "キーワードから探す", class: "search__main__inner__key__search"
+        = s.submit "i", class: "search__main__inner__key__submit"
+        = icon("fa", "search", class: "search__main__inner__key__icon") 
+      
+    .login__main__bottom
+      .login__main__bottom__left
+        %ul.login__main__bottom__left__ul
+          %li.login__main__bottom__left__ul__list1
+            = link_to 'カテゴリー', categories_path, id: 'catBtn'
+            = render  "items/nav-category", parent: @parents
+          %li.login__main__bottom__left__ul__list
+            = link_to 'ブランド', '#', id: 'brandBtn'
+      - if user_signed_in?
+        .login__main__bottom__right
+          %ul.login__main__bottom__right__ul
+            %li.login__main__bottom__right__ul__list 
+          = link_to "マイページ", users_path
+      - else
+        .search__main__bottom__right
+          %ul.search__main__bottom__right__ul
+            %li.search__main__bottom__right__ul__list 
+            = link_to "ログイン", new_user_session_path
+            %li.search__main__bottom__right__ul__list 
+            = link_to "新規登録", new_user_registration_path
+    - @items.each do |item|
+      .search__section4__box__main__product__lists1
+        -if item.buyer_id.present? 
+          .items-box_photo__sold
+            .items-box_photo__sold__inner
+              SOLD
+        .search__section4__box__main__product__lists1__image
+          = image_tag "#{item.images.first.image}"
+          .search__section4__box__main__product__lists1__list
+            .search__section4__box__main__product__lists1__list__text
+              = item.name
+            .search__section4__box__main__product__lists1__list__text1 
+              .search__section4__box__main__product__lists1__list__text1__left
+                = item.price
+                円
+              .search__section4__box__main__product__lists1__list__text1__right ★ 0
+            .search__section4__box__main__product__lists1__list__text2 (税込み)

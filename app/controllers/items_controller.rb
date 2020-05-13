@@ -50,6 +50,13 @@ class ItemsController < ApplicationController
     @user = User.find(@item.seller_id)
   end
 
+  def search
+    @items = Item.search(params[:keyword])
+    if @items[0] == nil
+      redirect_to root_path
+    end
+  end
+
   def destroy
     @item.destroy
     redirect_to root_path
@@ -151,4 +158,5 @@ class ItemsController < ApplicationController
   def move_to_session
     redirect_to new_user_session_path unless user_signed_in?
   end
+
 end

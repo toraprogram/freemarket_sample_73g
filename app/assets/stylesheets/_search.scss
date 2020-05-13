@@ -1,4 +1,5 @@
-.nologin {
+.search {
+  border-style: none;
   &__main {
     margin: 0 auto;
     width: 1050px;
@@ -19,10 +20,10 @@
         }
       }
       &__key {
-        margin-left: 180px;
         &__search {
-          width: 800px;
-          height: 35px;
+          margin-left: 180px;
+          width: 700px;
+          height: 34px;
           border: solid 1px #eee;
         }
         &__submit {
@@ -32,13 +33,13 @@
           color: #3ccaec;
           background-color: #3CCACE;
           input {
-          padding-top: 35px;
+          padding-top: 45px;
           height: 40px;
           }
         }
         &__icon {
           position: absolute;
-          left: 997px;
+          left: 895px;
           top: 8px;
           font-weight: bold;
           color: white;
@@ -60,9 +61,6 @@
         &__ul {
           display: flex;
           justify-content: space-between;
-          &__list {
-            padding-left: 120px;
-          }
         }
       }
       &__right {
@@ -70,14 +68,51 @@
         height: 45px;
         width: 200px;
         font-size: 12px;
+        margin-right: 100px;
         &__ul {
           display: flex;
           justify-content: space-between;
           margin-right: 25px;
+          margin-left: 50px;
         }
       }
     }
   }
 }
+.search__section4__box__main__product__lists1 {
+  text-align: center;
+  float: left;
+  margin-left: 20px;
+  margin-top: 20px;
+  &__lists1:hover {
+    background-color: #c9c9c9; 
+    text-decoration: none; 
+  }
+    &__image {
+      img {
+        width: 220px;
+        height:170px;
 
+      }
+    }
+    &__list {
+      padding: 0 15px;
+      &__text {
+        font-size: 16px;
+        overflow: hidden;
+      }
+      &__text1 {
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        &__right {
+          padding-left: 90px;
+        }
+      }
+      &__text2 {
+        font-size: 10px;
+        padding-right: 140px;
+      }
+    }
+}
 

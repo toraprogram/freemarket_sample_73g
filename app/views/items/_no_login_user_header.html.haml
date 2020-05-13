@@ -4,9 +4,10 @@
       .nologin__main__inner__icon
         = link_to image_tag "logo/logo.png"
       .nologin__main__inner__key
-        %input{placeholder: "キーワードから探す"}
-          .nologin__main__inner__key__search
-            = link_to image_tag "icon/icon-search 1.png"
+        = form_with(url: search_items_path, local: true, method: :get) do |s|
+          = s.text_field :keyword, placeholder: "キーワードから探す", class: "nologin__main__inner__key__search"
+          = s.submit "検索", class: "nologin__main__inner__key__submit"
+          = icon("fa", "search", class: "nologin__main__inner__key__icon")
     .nologin__main__bottom
       .login__main__bottom__left
         %ul.login__main__bottom__left__ul
