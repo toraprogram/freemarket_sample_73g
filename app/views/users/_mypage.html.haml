@@ -2,12 +2,15 @@
   .main__contents
     .main__contents_myinfo
       .main__contents_myinfo_icon
-        = icon("fas", "user-circle", class: 'icon')
+        -if @user.icon_image.present?
+          = image_tag "#{@user.icon_image}"
+        - else
+          = icon("fas", "user-circle", class: 'icon')
       .main__contents_myinfo_nickname
         = @user.nickname
       %ul.main__contents_myinfo_info
-        %li 評価 0
-        %li 出品 0
+        %li 評価： 0
+        = "出品：#{current_user.items.count}"
       .main__contents_myinfo_message
         - if notice == "Signed in successfully."
           %p ログインしました！
@@ -19,12 +22,25 @@
         .main__contents_myitems_box_trading
           %p 取引中
           .main__contents_myitems_box_trading_list
-            %ul
-              %li item1
-              %li item2
+            .bought-item_last
+              - if @user.items.present?
+                .bought-item_last_image
+                  = link_to item_path(@user.items.last), method: :get do
+                    = image_tag "#{@imagelast.image}", class: 'itemimage_last'
+                .bought-item_last_name
+                  = @boughtitems.last.name
+              - else
+                %p 取引はありません
+            .bought-item_first
+              - if @user.items.count > 1
+                .bought-item_first_image
+                  = link_to item_path(@imagefirst.item_id) do
+                    = image_tag "#{@imagefirst.image}", class: 'itemimage_first'
+                .bought-item_first_name
+                  = @boughtitems.first.name
         .main__contents_myitems_box_traded
-          %p 過去の取引
+          %p 
           .main__contents_myitems_box_traded_list
             %ul
-              %li item3
-              %li item4
+              %li 
+              %li 
